@@ -1,0 +1,66 @@
+[09-Dec-2017 18:14:14 UTC] PHP Warning:  require(../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:14:14 UTC] PHP Warning:  require(../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:14:14 UTC] PHP Fatal error:  require(): Failed opening required '../../main.inc.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:14:26 UTC] PHP Warning:  require(../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:14:26 UTC] PHP Warning:  require(../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:14:26 UTC] PHP Fatal error:  require(): Failed opening required '../../main.inc.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:16:16 UTC] PHP Warning:  require(../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:16:16 UTC] PHP Warning:  require(../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:16:16 UTC] PHP Fatal error:  require(): Failed opening required '../../main.inc.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:17:46 UTC] PHP Warning:  require(/../../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:17:46 UTC] PHP Warning:  require(/../../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:17:46 UTC] PHP Fatal error:  require(): Failed opening required '/../../../main.inc.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:17:48 UTC] PHP Warning:  require(/../../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:17:48 UTC] PHP Warning:  require(/../../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:17:48 UTC] PHP Fatal error:  require(): Failed opening required '/../../../main.inc.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:18:01 UTC] PHP Warning:  require(/../../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:18:01 UTC] PHP Warning:  require(/../../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:18:01 UTC] PHP Fatal error:  require(): Failed opening required '/../../../main.inc.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 21
+[09-Dec-2017 18:18:09 UTC] PHP Warning:  require(/../../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 20
+[09-Dec-2017 18:18:09 UTC] PHP Warning:  require(/../../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 20
+[09-Dec-2017 18:18:09 UTC] PHP Fatal error:  require(): Failed opening required '/../../../main.inc.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 20
+[09-Dec-2017 18:18:25 UTC] PHP Warning:  require(/../../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 20
+[09-Dec-2017 18:18:25 UTC] PHP Warning:  require(/../../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 20
+[09-Dec-2017 18:18:25 UTC] PHP Fatal error:  require(): Failed opening required '/../../../main.inc.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 20
+[15-Dec-2017 02:57:46 UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 139
+[15-Dec-2017 02:58:39 UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 139
+[15-Dec-2017 02:59:41 UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 139
+[15-Dec-2017 03:00:01 UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 139
+[15-Dec-2017 03:00:24 UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 139
+[15-Dec-2017 03:02:46 UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 139
+[15-Dec-2017 03:04:21 UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 139
+[15-Dec-2017 03:07:47 UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 139
+[15-Dec-2017 03:07:52 UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 139
+[15-Dec-2017 03:08:09 UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 139
+[15-Dec-2017 03:09:01 UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 140
+[15-Dec-2017 03:12:12 UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 139
+[15-Dec-2017 03:13:08 UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 139
+[15-Dec-2017 03:13:10 UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 139
+[15-Dec-2017 03:13:36 UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 139
+[15-Dec-2017 03:15:06 UTC] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 139
+[15-Dec-2017 03:16:52 UTC] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 140
+[15-Dec-2017 03:17:01 UTC] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 140
+[15-Dec-2017 03:17:32 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 155
+[15-Dec-2017 03:20:06 UTC] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 140
+[15-Dec-2017 03:21:18 UTC] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 140
+[15-Dec-2017 03:21:53 UTC] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 140
+[15-Dec-2017 03:23:35 UTC] PHP Parse error:  syntax error, unexpected 'var' (T_VAR) in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 140
+[15-Dec-2017 22:18:43 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 142
+[15-Dec-2017 22:21:22 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 142
+[15-Dec-2017 22:27:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method proprietaireHandler::delete() in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:43
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php(69): proprietaireHandler->execute(Object(stdClass))
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 43
+[15-Dec-2017 22:28:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method proprietaireHandler::delete() in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:43
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php(69): proprietaireHandler->execute(Object(stdClass))
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 43
+[15-Dec-2017 22:28:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method proprietaireHandler::delete() in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:43
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php(69): proprietaireHandler->execute(Object(stdClass))
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 43
+[15-Dec-2017 22:30:21 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 142
+[15-Dec-2017 22:31:38 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 142

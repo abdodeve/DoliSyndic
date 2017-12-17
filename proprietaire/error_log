@@ -1,0 +1,31 @@
+[09-Dec-2017 17:34:04 UTC] PHP Warning:  require(../../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/maj.php on line 7
+[09-Dec-2017 17:34:04 UTC] PHP Warning:  require(../../../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/maj.php on line 7
+[09-Dec-2017 17:34:04 UTC] PHP Fatal error:  require(): Failed opening required '../../../main.inc.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/maj.php on line 7
+[10-Dec-2017 00:22:34 UTC] PHP Warning:  require_once(/home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php on line 6
+[10-Dec-2017 00:22:34 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php' (include_path='/home/marocgee/public_html/gestion-tva/htdocs') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php on line 6
+[10-Dec-2017 00:22:36 UTC] PHP Warning:  require_once(/home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php on line 6
+[10-Dec-2017 00:22:36 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php' (include_path='/home/marocgee/public_html/gestion-tva/htdocs') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php on line 6
+[10-Dec-2017 00:23:47 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php:5) in /home/marocgee/public_html/gestion-tva/htdocs/main.inc.php on line 207
+[10-Dec-2017 00:23:47 UTC] PHP Warning:  require_once(/home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php on line 7
+[10-Dec-2017 00:23:47 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php' (include_path='/home/marocgee/public_html/gestion-tva/htdocs') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php on line 7
+[10-Dec-2017 00:24:15 UTC] PHP Warning:  require_once(/home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php on line 6
+[10-Dec-2017 00:24:15 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php' (include_path='/home/marocgee/public_html/gestion-tva/htdocs') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php on line 6
+[10-Dec-2017 00:43:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php:64
+Stack trace:
+#0 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php on line 64
+[10-Dec-2017 00:46:58 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php:64
+Stack trace:
+#0 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php on line 64
+[10-Dec-2017 00:49:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php:64
+Stack trace:
+#0 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php on line 64
+[10-Dec-2017 00:58:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php:64
+Stack trace:
+#0 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php on line 64
+[11-Dec-2017 23:38:43 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php:6) in /home/marocgee/public_html/gestion-tva/htdocs/main.inc.php on line 1019
+[11-Dec-2017 23:38:43 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php:6) in /home/marocgee/public_html/gestion-tva/htdocs/main.inc.php on line 1022
+[11-Dec-2017 23:38:43 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/liste.php:6) in /home/marocgee/public_html/gestion-tva/htdocs/main.inc.php on line 1023

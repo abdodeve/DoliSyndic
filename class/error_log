@@ -1,0 +1,303 @@
+[05-Dec-2017 23:25:17 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 46 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:27:21 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 46 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:28:11 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:28:49 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:29:43 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:29:47 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:31:06 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:31:29 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:31:50 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:31:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(30): SyndicProprietaire->fetch()
+#1 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(48): proprietaireHandler->execute('fetch')
+#2 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[05-Dec-2017 23:31:57 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:31:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(30): SyndicProprietaire->fetch()
+#1 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(48): proprietaireHandler->execute('fetch')
+#2 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[05-Dec-2017 23:32:30 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:32:46 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:32:46 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(30): SyndicProprietaire->fetch()
+#1 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(48): proprietaireHandler->execute('fetch')
+#2 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[05-Dec-2017 23:32:50 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:32:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(30): SyndicProprietaire->fetch()
+#1 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(48): proprietaireHandler->execute('fetch')
+#2 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[05-Dec-2017 23:32:58 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:33:07 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:33:07 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(30): SyndicProprietaire->fetch()
+#1 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(48): proprietaireHandler->execute('fetch')
+#2 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[05-Dec-2017 23:33:15 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:34:11 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:34:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(49): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[05-Dec-2017 23:34:12 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:34:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(49): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[05-Dec-2017 23:34:50 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:34:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(49): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[05-Dec-2017 23:35:16 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:35:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(49): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[05-Dec-2017 23:35:17 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:35:17 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(49): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[05-Dec-2017 23:51:28 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:52:42 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:52:57 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:53:14 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:53:14 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(49): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[05-Dec-2017 23:55:08 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:55:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(49): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[05-Dec-2017 23:55:11 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[05-Dec-2017 23:55:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(49): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[05-Dec-2017 23:55:59 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC), expecting end of file in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 20
+[06-Dec-2017 00:01:48 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:01:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(49): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:01:50 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:01:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(49): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:03:43 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:03:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(49): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:03:50 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:03:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(49): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:04:25 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:05:44 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:05:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(13): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:06:25 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:06:28 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:07:56 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:07:58 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:08:14 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:10:54 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:10:54 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:11:58 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:11:58 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:11:58 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(12): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:12:00 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:12:00 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:12:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(12): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:12:47 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:12:47 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:12:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(12): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:12:49 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:12:49 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:12:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(12): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:12:49 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:12:49 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:12:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(12): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:12:49 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:12:49 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:12:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(12): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:16:19 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:16:19 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 12 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:16:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(13): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:16:21 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 47 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:16:21 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 12 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:16:21 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(13): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:17:06 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 17 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:17:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(18): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:17:07 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 17 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:17:07 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(18): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:17:08 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 17 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:17:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(18): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:17:08 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 17 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:17:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(18): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:17:45 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 17 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:17:45 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(18): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:17:47 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 17 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:17:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(18): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:17:48 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 17 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:17:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(18): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:17:48 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 17 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:17:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(18): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:17:49 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 17 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:17:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(18): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:19:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(18): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:19:28 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(18): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:22:05 UTC] PHP Warning:  require(DOL_DOCUMENT_ROOT/main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11
+[06-Dec-2017 00:22:05 UTC] PHP Warning:  require(DOL_DOCUMENT_ROOT/main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11
+[06-Dec-2017 00:22:05 UTC] PHP Fatal error:  require(): Failed opening required 'DOL_DOCUMENT_ROOT/main.inc.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11
+[06-Dec-2017 00:23:50 UTC] PHP Warning:  require(DOL_DOCUMENT_ROOT/main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11
+[06-Dec-2017 00:23:50 UTC] PHP Warning:  require(DOL_DOCUMENT_ROOT/main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11
+[06-Dec-2017 00:23:50 UTC] PHP Fatal error:  require(): Failed opening required 'DOL_DOCUMENT_ROOT/main.inc.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11
+[06-Dec-2017 00:24:17 UTC] PHP Warning:  require(DOL_DOCUMENT_ROOT/main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11
+[06-Dec-2017 00:24:17 UTC] PHP Warning:  require(DOL_DOCUMENT_ROOT/main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11
+[06-Dec-2017 00:24:17 UTC] PHP Fatal error:  require(): Failed opening required 'DOL_DOCUMENT_ROOT/main.inc.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11
+[06-Dec-2017 00:24:18 UTC] PHP Warning:  require(DOL_DOCUMENT_ROOT/main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11
+[06-Dec-2017 00:24:18 UTC] PHP Warning:  require(DOL_DOCUMENT_ROOT/main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11
+[06-Dec-2017 00:24:18 UTC] PHP Fatal error:  require(): Failed opening required 'DOL_DOCUMENT_ROOT/main.inc.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11
+[06-Dec-2017 00:24:19 UTC] PHP Warning:  require(DOL_DOCUMENT_ROOT/main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11
+[06-Dec-2017 00:24:19 UTC] PHP Warning:  require(DOL_DOCUMENT_ROOT/main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11
+[06-Dec-2017 00:24:19 UTC] PHP Fatal error:  require(): Failed opening required 'DOL_DOCUMENT_ROOT/main.inc.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 11
+[06-Dec-2017 00:25:28 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(21): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:26:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(15): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:26:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php(15): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[06-Dec-2017 00:41:37 UTC] PHP Warning:  require(.../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 5
+[06-Dec-2017 00:41:37 UTC] PHP Warning:  require(.../main.inc.php): failed to open stream: No such file or directory in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 5
+[06-Dec-2017 00:41:37 UTC] PHP Fatal error:  require(): Failed opening required '.../main.inc.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 5
+[06-Dec-2017 00:42:17 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 7 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:42:19 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 7 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:42:20 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 7 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 00:42:21 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 7 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 21:42:52 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php on line 48 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[06-Dec-2017 21:42:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php:106
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaireHandler.class.php(50): SyndicProprietaire->fetch()
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 106
+[07-Dec-2017 23:40:08 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 7 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[07-Dec-2017 23:42:32 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 7 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[07-Dec-2017 23:44:16 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 7 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
+[07-Dec-2017 23:44:21 UTC] PHP Warning:  Missing argument 1 for SyndicProprietaire::__construct(), called in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/test.php on line 7 and defined in /home/marocgee/public_html/gestion-tva/htdocs/syndic/class/proprietaire.class.php on line 36
