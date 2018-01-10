@@ -42,10 +42,10 @@ class modSyndic extends DolibarrModules
 
         $this->db = $db;
 
-		$this->editor_name = 'AXeL';
+		$this->editor_name = 'Adev';
 		// Id for module (must be unique).
 		// Use here a free id (See in Home -> System information -> Dolibarr for list of used modules id).
-		$this->numero = 514000; // 510000 to 520000
+		$this->numero = 514001; // 510000 to 520000
 		// Key text used to identify module (for permissions, menus, etc...)
 		$this->rights_class = 'syndic';
 
@@ -73,11 +73,15 @@ class modSyndic extends DolibarrModules
 		// for specific css file (eg: /listexportimport/css/listexportimport.css.php)
 		$this->module_parts = array(
                                             'js' => array(  'syndic/js/tabulator.min.js',
-                                                            'syndic/js/angular.min.js'
+                                                            'syndic/js/angular.min.js',
+                                                            'syndic/js/angular-sanitize.js',
+                                                            'syndic/js/angular-route.js',
+                                                            'syndic/js/popper.min.js',
+                                                            'syndic/js/bootstrap.min.js'
                                                           ),
                                             'css' => array('syndic/css/style.css',
                                                             'syndic/css/tabulator.min.css'
-																													),
+                                                           ),
                                             'hooks' => array('toprightmenu')
 					);
 
@@ -103,9 +107,10 @@ class modSyndic extends DolibarrModules
                 $r=0;
 
 		// Array to add new pages in new tabs
-		// Example: $this->tabs = array('objecttype:+tabname1:Title1:mylangfile@listexportimport:$user->rights->listexportimport->read:/listexportimport/mynewtab1.php?id=__ID__',  	// To add a new tab identified by code tabname1
-                //                              'objecttype:+tabname2:Title2:mylangfile@listexportimport:$user->rights->othermodule->read:/listexportimport/mynewtab2.php?id=__ID__',  	// To add another new tab identified by code tabname2
-                //                              'objecttype:-tabname:NU:conditiontoremove');                                                     						// To remove an existing tab identified by code tabname
+        // $this->tabs = array('thirdparty:+tabname1:Title1:Adev_Title:1:/syndic/proprietaire/liste.php');
+//		 Example: $this->tabs = array('objecttype:+tabname1:Title1:mylangfile@listexportimport:$user->rights->listexportimport->read:/listexportimport/mynewtab1.php?id=__ID__',  	// To add a new tab identified by code tabname1
+//                                              'objecttype:+tabname2:Title2:mylangfile@listexportimport:$user->rights->othermodule->read:/listexportimport/mynewtab2.php?id=__ID__',  	// To add another new tab identified by code tabname2
+//                                              'objecttype:-tabname:NU:conditiontoremove');                                                     						// To remove an existing tab identified by code tabname
 		// where objecttype can be
 		// 'categories_x'	  to add a tab in category view (replace 'x' by type of category (0=product, 1=supplier, 2=customer, 3=member)
 		// 'contact'          to add a tab in contact view
@@ -175,55 +180,219 @@ class modSyndic extends DolibarrModules
 						'user'=>2);	
 		
 		$r++;
- 
-// Example to declare a Left Menu entry:
-$this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
-			'type'=>'left',			// This is a Left menu entry
-			'titre'=>'Proprietaire',
-			'mainmenu'=>'syndic',
-                        'leftmenu'=>'home',
-			'url'=>'/syndic/index.php',
-			'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
-			'position'=>101,
-			'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.
-			'perms'=>'1',			// Use 'perms'=>'$user->rights->monmodule->level1->level2' if you want your menu with a permission rules
-			'target'=>'',
-			'user'=>2);	
-		
-	$r++;
-		
-		 
-// Example to declare a Left Menu entry:
-$this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic,fk_leftmenu=home',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
-			'type'=>'left',			// This is a Left menu entry
-			'titre'=>'Nouveau proprietaire',
-			'mainmenu'=>'syndic',
-                        'leftmenu'=>'nvprop',
-			'url'=>'/syndic/prop.php?action=create',
-			'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
-			'position'=>102,
-			'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.
-			'perms'=>'1',			// Use 'perms'=>'$user->rights->monmodule->level1->level2' if you want your menu with a permission rules
-			'target'=>'',
-			'user'=>2);	
-		
-	$r++;
-// Example to declare a Left Menu entry:
-$this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic,fk_leftmenu=home',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
-			'type'=>'left',			// This is a Left menu entry
-			'titre'=>'Liste proprietaire',
-			'mainmenu'=>'syndic',
-                        'leftmenu'=>'list_proprietaire',
-			'url'=>'/syndic/liste_proprietaire.php',
-			'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
-			'position'=>103,
-			'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.
-			'perms'=>'1',			// Use 'perms'=>'$user->rights->monmodule->level1->level2' if you want your menu with a permission rules
-			'target'=>'',
-			'user'=>2);	
-		
-	$r++;
-		
+/*
+ * ************************
+ *  Left Sidebar Menu
+ * *************************
+ */
+    /*
+     * ************************
+     *Proprietaire
+     * *************************
+     */
+    // Menu Proprietaire
+    $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
+                'type'=>'left',			// This is a Left menu entry
+                'titre'=>'Proprietaire',
+                'mainmenu'=>'syndic',
+                            'leftmenu'=>'proprietaire',
+                'url'=>'/syndic/index.php',
+                'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
+                'position'=>101,
+                'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.
+                'perms'=>'1',			// Use 'perms'=>'$user->rights->monmodule->level1->level2' if you want your menu with a permission rules
+                'target'=>'',
+                'user'=>2);
+
+        $r++;
+    // Nouveau proprietaire - Submenu Proprietaire
+    $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic,fk_leftmenu=proprietaire',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
+                'type'=>'left',			// This is a Left menu entry
+                'titre'=>'Nouveau proprietaire',
+                'mainmenu'=>'syndic',
+                'leftmenu'=>'nvprop',
+                'url'=>'/syndic/proprietaire/maj.php',
+                'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
+                'position'=>102,
+                'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.
+                'perms'=>'1',			// Use 'perms'=>'$user->rights->monmodule->level1->level2' if you want your menu with a permission rules
+                'target'=>'',
+                'user'=>2);
+
+        $r++;
+    // Liste proprietaire - Submenu Proprietaire
+    $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic,fk_leftmenu=proprietaire',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
+                'type'=>'left',			// This is a Left menu entry
+                'titre'=>'Liste proprietaire',
+                'mainmenu'=>'syndic',
+                'leftmenu'=>'list_proprietaire',
+                'url'=>'/syndic/proprietaire/liste.php',
+                'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
+                'position'=>103,
+                'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.
+                'perms'=>'1',			// Use 'perms'=>'$user->rights->monmodule->level1->level2' if you want your menu with a permission rules
+                'target'=>'',
+                'user'=>2);
+
+        $r++;
+     /*
+     ***************************
+     *  Appartement
+     ***************************
+     */
+        // Menu Appartement
+        $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
+            'type'=>'left',			// This is a Left menu entry
+            'titre'=>'Appartement',
+            'mainmenu'=>'syndic',
+            'leftmenu'=>'appartement',
+            'url'=>'/syndic/index.php',
+            'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
+            'position'=>104,
+            'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.
+            'perms'=>'1',			// Use 'perms'=>'$user->rights->monmodule->level1->level2' if you want your menu with a permission rules
+            'target'=>'',
+            'user'=>2);
+        $r++;
+
+        // Nouveau Appartement - Submenu Appartement
+        $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic,fk_leftmenu=appartement',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
+            'type'=>'left',			// This is a Left menu entry
+            'titre'=>'Nouveau appartement',
+            'mainmenu'=>'syndic',
+            'leftmenu'=>'nvappart',
+            'url'=>'/syndic/appartement/maj.php',
+            'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
+            'position'=>105,
+            'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.
+            'perms'=>'1',			// Use 'perms'=>'$user->rights->monmodule->level1->level2' if you want your menu with a permission rules
+            'target'=>'',
+            'user'=>2);
+
+         $r++;
+
+        // Liste Appartement - Submenu Appartement
+        $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic,fk_leftmenu=appartement',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
+            'type'=>'left',			// This is a Left menu entry
+            'titre'=>'Liste appartement',
+            'mainmenu'=>'syndic',
+            'leftmenu'=>'list_appartement',
+            'url'=>'/syndic/appartement/liste.php',
+            'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
+            'position'=>106,
+            'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.
+            'perms'=>'1',			// Use 'perms'=>'$user->rights->monmodule->level1->level2' if you want your menu with a permission rules
+            'target'=>'',
+            'user'=>2);
+
+        $r++;
+
+       /*
+       ***************************
+       *  Residence
+       ***************************
+       */
+        // Menu Residence
+        $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
+            'type'=>'left',			// This is a Left menu entry
+            'titre'=>'Residence',
+            'mainmenu'=>'syndic',
+            'leftmenu'=>'residence',
+            'url'=>'/syndic/index.php',
+            'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
+            'position'=>107,
+            'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.
+            'perms'=>'1',			// Use 'perms'=>'$user->rights->monmodule->level1->level2' if you want your menu with a permission rules
+            'target'=>'',
+            'user'=>2);
+        $r++;
+
+        // Nouveau Residence - Submenu Residence
+        $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic,fk_leftmenu=residence',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
+            'type'=>'left',			// This is a Left menu entry
+            'titre'=>'Nouveau residence',
+            'mainmenu'=>'syndic',
+            'leftmenu'=>'nv_residence',
+            'url'=>'/syndic/residence/maj.php',
+            'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
+            'position'=>108,
+            'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.
+            'perms'=>'1',			// Use 'perms'=>'$user->rights->monmodule->level1->level2' if you want your menu with a permission rules
+            'target'=>'',
+            'user'=>2);
+
+        $r++;
+
+        // Liste Residence - Submenu Residence
+        $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic,fk_leftmenu=residence',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
+            'type'=>'left',			// This is a Left menu entry
+            'titre'=>'Liste residence',
+            'mainmenu'=>'syndic',
+            'leftmenu'=>'list_residence',
+            'url'=>'/syndic/residence/liste.php',
+            'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
+            'position'=>109,
+            'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.
+            'perms'=>'1',			// Use 'perms'=>'$user->rights->monmodule->level1->level2' if you want your menu with a permission rules
+            'target'=>'',
+            'user'=>2);
+
+        $r++;
+
+
+        /*
+        ***************************
+        *  Paiement
+        ***************************
+        */
+        // Menu Paiement
+        $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
+            'type'=>'left',			// This is a Left menu entry
+            'titre'=>'Paiement',
+            'mainmenu'=>'syndic',
+            'leftmenu'=>'paiement',
+            'url'=>'/syndic/index.php',
+            'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
+            'position'=>108,
+            'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.
+            'perms'=>'1',			// Use 'perms'=>'$user->rights->monmodule->level1->level2' if you want your menu with a permission rules
+            'target'=>'',
+            'user'=>2);
+        $r++;
+
+        // Nouveau Paiement - Submenu Paiement
+        $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic,fk_leftmenu=paiement',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
+            'type'=>'left',			// This is a Left menu entry
+            'titre'=>'Nouveau paiement',
+            'mainmenu'=>'syndic',
+            'leftmenu'=>'nv_paiemente',
+            'url'=>'/syndic/paiement/maj.php',
+            'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
+            'position'=>108,
+            'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.
+            'perms'=>'1',			// Use 'perms'=>'$user->rights->monmodule->level1->level2' if you want your menu with a permission rules
+            'target'=>'',
+            'user'=>2);
+
+        $r++;
+
+        // Liste Paiement - Submenu Paiement
+        $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic,fk_leftmenu=paiement',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
+            'type'=>'left',			// This is a Left menu entry
+            'titre'=>'Liste paiement',
+            'mainmenu'=>'syndic',
+            'leftmenu'=>'list_paiement',
+            'url'=>'/syndic/paiement/liste.php',
+            'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
+            'position'=>109,
+            'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.
+            'perms'=>'1',			// Use 'perms'=>'$user->rights->monmodule->level1->level2' if you want your menu with a permission rules
+            'target'=>'',
+            'user'=>2);
+
+        $r++;
+
+
 		// Exports
 		//$r=1;
 

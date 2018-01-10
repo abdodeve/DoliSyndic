@@ -4,3 +4,12 @@ div.mainmenu.syndic {
  div.fiche {
         margin-right: 0; 
     }
+
+div.pagination li.pagination a.inactive {
+     cursor: default;
+     color: #ccc;
+     pointer-events: none;
+ }
+.selectpicker .clear {
+  padding : 0 ;
+}

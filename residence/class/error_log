@@ -1,0 +1,40 @@
+[06-Jan-2018 11:04:40 America/Chicago] PHP Fatal error:  Uncaught Error: Non-static method mysqli::real_escape_string() cannot be called statically in /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php:44
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php(82): residenceHandler->execute(Object(stdClass))
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php on line 44
+[06-Jan-2018 11:05:31 America/Chicago] PHP Fatal error:  Uncaught Error: Non-static method mysqli::real_escape_string() cannot be called statically in /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php:44
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php(82): residenceHandler->execute(Object(stdClass))
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php on line 44
+[06-Jan-2018 11:07:07 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function real_escape_string() on null in /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php:44
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php(82): residenceHandler->execute(Object(stdClass))
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php on line 44
+[06-Jan-2018 11:17:25 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method DoliDBMysqli::real_escape_string() in /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php:43
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php(81): residenceHandler->execute(Object(stdClass))
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php on line 43
+[06-Jan-2018 11:22:50 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method DoliDBMysqli::real_escape_string() in /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php:43
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php(81): residenceHandler->execute(Object(stdClass))
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php on line 43
+[06-Jan-2018 11:23:24 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method DoliDBMysqli::real_escape_string() in /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php:43
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php(81): residenceHandler->execute(Object(stdClass))
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php on line 43
+[06-Jan-2018 11:23:26 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method DoliDBMysqli::real_escape_string() in /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php:43
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php(81): residenceHandler->execute(Object(stdClass))
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php on line 43
+[06-Jan-2018 11:23:30 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined method DoliDBMysqli::real_escape_string() in /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php:43
+Stack trace:
+#0 /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php(81): residenceHandler->execute(Object(stdClass))
+#1 {main}
+  thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/residence/class/residenceHandler.class.php on line 43

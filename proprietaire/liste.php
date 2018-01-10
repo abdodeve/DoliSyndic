@@ -1,12 +1,22 @@
 <?php
-/* 
- * Copyright (C) 2017-2018	Abdelhadi Habchi	<abdelhadi.deve@gmail.com>
+/* Copyright (C) 2016-2018 MarocGeek  <contact@marocgeek.com>
+ *
+ *This Software Created By MarocGeek Team
+ * A software for Manage Syndic Activities
+ * SiteWeb : www.marocgeek.com
+ *
  */
+
+/**
+ *  \ingroup    syndic/proprietaire
+ *  \brief      Page : Liste/Tableau for display all rows
+ */
+
 require '../../main.inc.php';
-llxHeader();
+llxHeader('',$title='Liste des proprietaires');
 ?>
 
-<div ng-app="listeApp">
+<div ng-app="listeApp" ng-cloak>
 <div ng-controller="listeCtrl">
 	<h1>
 		{{myWelcome}}
@@ -52,6 +62,7 @@ llxHeader();
   </div>
 </div>
 
+    <div id="test_table" style="width: 98%"></div>
 	<div class="div-table-responsive">
 					<div id="table_proprietaire" style="width: 98%"></div>
 	</div>
@@ -66,6 +77,6 @@ $("#select-all").on("change", function(){
    alert("message test");
  });
 </script>
-<script src="proprietaire.js"></script>
+<script src="script.js"></script>
 <?php
 $db->close();

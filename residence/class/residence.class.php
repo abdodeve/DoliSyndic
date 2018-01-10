@@ -8,30 +8,24 @@
  */
 
 /**
- *  \ingroup    syndic/proprietaire
+ *  \ingroup    syndic/residence
  *  \brief      Core Methodes here
  */
 
 /**
- *  Class to manage Syndic Proprietaire
+ *  Class to manage Syndic Residence
  */
-//SyndicProprietaire
-class SyndicProprietaire // extends CommonObject
+//SyndicResidence
+class SyndicResidence // extends CommonObject
 {
 	/**
-	* Proprieties
+	* Residence
 	*/
-		var $nom ;
-		var $prenom ;
-		var $titre ;
-		var $civilite ;
-		var $ville ;
-    var $adresse_1 ;
-    var $adresse_2 ;
-    var $email_1 ;
-    var $email_2 ;
-    var $tel_1 ;
-    var $tel_2 ;
+    var $num_residence ;
+    var $nom ;
+	var $adresse ;
+	var $cp_res ; 
+	var $ville ;
 	
 	/**
 	 *	Constructor
@@ -55,31 +49,19 @@ class SyndicProprietaire // extends CommonObject
 	{
 		$this->db->begin();   // Debut transaction
       
-		$sql = "INSERT INTO ".MAIN_DB_PREFIX."syndic_proprietaire(
+		$sql = "INSERT INTO ".MAIN_DB_PREFIX."syndic_residence(
+						num_residence,
 						nom,
-						prenom,
-						titre,
-						civilite,
-						ville,
-						adresse_1, 
-                        adresse_2, 
-                        email_1, 
-                        email_2, 
-                        tel_1, 
-                        tel_2
+						adresse,
+						cp_res, 
+						ville
 						)
 						VALUES (
+							'".$this->num_residence."',
 							'".$this->nom."',
-							'".$this->prenom."',
-							'".$this->titre."',
-							'".$this->civilite."',
-							'".$this->ville."',
-							'".$this->adresse_1."',
-							'".$this->adresse_2."',
-							'".$this->email_1."',
-							'".$this->email_2."',
-							'".$this->tel_1."',
-							'".$this->tel_2."'
+							'".$this->adresse."',
+							'".$this->cp_res."', 
+							'".$this->ville."'
 						)";
     	$resql=$this->db->query($sql);
 			if ($resql)
@@ -109,42 +91,29 @@ class SyndicProprietaire // extends CommonObject
      **/
 
   public function fetch($s = null,$id = null){
-
+ 
     $where = "" ;
     if(!empty($s)){
-        $where = "where
-                        nom         like '%".$s."%' or
-                        prenom      like '%".$s."%' or
-                        titre       like '%".$s."%' or
-                        civilite    like '%".$s."%' or
-                        ville       like '%".$s."%' or
-                        adresse_1   like '%".$s."%' or
-                        adresse_2   like '%".$s."%' or
-                        email_1     like '%".$s."%' or
-                        email_2     like '%".$s."%' or
-                        tel_1       like '%".$s."%' or
-                        tel_2       like '%".$s."%'
+        $where = "where 
+                        num_residence    like '%".$s."%' or
+                        nom              like '%".$s."%' or
+                        adresse          like '%".$s."%' or
+                        cp_res           like '%".$s."%' or 
+                        ville            like '%".$s."%'
                 ";
-
-    }elseif (!empty($id)){
-        $where = "where rowid = {$id}" ;
+    }elseif(!empty($id)){
+        $where = "where rowid = ".$id;
     }
 
     $sql = "select 
-                    rowid,
-                    nom, 
-                    prenom, 
-                    titre, 
-                    civilite, 
-                    ville, 
-                    adresse_1, 
-                    adresse_2, 
-                    email_1, 
-                    email_2, 
-                    tel_1, 
-                    tel_2
+                   rowid,
+                   num_residence,
+                   nom, 
+                   adresse, 
+                   cp_res,   
+                   ville 
             FROM 
-                   ".MAIN_DB_PREFIX."syndic_proprietaire ".$where ;
+                   ".MAIN_DB_PREFIX."syndic_residence ".$where ;
 
     $resql=$this->db->query($sql);
     if ($resql)
@@ -159,19 +128,13 @@ class SyndicProprietaire // extends CommonObject
                                         $obj = $this->db->fetch_object($resql);
                                         if ($obj)
                                         {
-                                            $arr[]  = array('id'        =>$obj->rowid,
-                                                            'nom'       =>$obj->nom,
-                                                            'prenom'    =>$obj->prenom,
-                                                            'titre'     =>$obj->titre,
-                                                            'civilite'  =>$obj->civilite,
-                                                            'ville'     =>$obj->ville,
-                                                            'adresse_1' =>$obj->adresse_1,
-                                                            'adresse_2' =>$obj->adresse_2,
-                                                            'email_1'   =>$obj->email_1,
-                                                            'email_2'   =>$obj->email_2,
-                                                            'tel_1'     =>$obj->tel_1,
-                                                            'tel_2'     =>$obj->tel_2,
-                                                            'sup'       => true);
+                                            $arr[]  = array('id'                  =>$obj->rowid,
+                                                            'num_residence'       =>$obj->num_residence,
+                                                            'nom'                 =>$obj->nom,
+                                                            'adresse'             =>$obj->adresse,
+                                                            'cp_res'              =>$obj->cp_res,
+                                                            'ville'               =>$obj->ville,
+                                                            'sup'                 => true);
                                         }
                                         $i++;
                                 }
@@ -179,14 +142,14 @@ class SyndicProprietaire // extends CommonObject
                             return $arrJson ;
                         }else{
                             //Fail
-                            return $sql ;
+                            return 'Error in this req : \n '.$sql ;
                         }
         }
 			else
 			{
 			                    //Fail
 								$this->db->rollback();
-								return $sql ;//return -1 ;
+								return -1 ;
 			}
     }
 
@@ -210,7 +173,7 @@ class SyndicProprietaire // extends CommonObject
 			$ids .= $value ;
 		}
 		$sql = "DELETE 
-						FROM ".MAIN_DB_PREFIX."syndic_proprietaire 
+						FROM ".MAIN_DB_PREFIX."syndic_residence 
 						WHERE 
 							  rowid in (".$ids.");";
 		 	$resql=$this->db->query($sql);
@@ -245,21 +208,15 @@ class SyndicProprietaire // extends CommonObject
 
         $this->db->begin();   // Debut transaction
 
-        $sql = "update ".MAIN_DB_PREFIX."syndic_proprietaire
+        $sql = "update ".MAIN_DB_PREFIX."syndic_residence
                                                       SET 
-                                                            nom         = '".$this->nom."',
-                                                            prenom      = '".$this->prenom."',
-                                                            titre       = '".$this->titre."',
-                                                            civilite    = '".$this->civilite."',
-                                                            ville       = '".$this->ville."',
-                                                            adresse_1   = '".$this->adresse_1."',
-                                                            adresse_2   = '".$this->adresse_2."',
-                                                            email_1     = '".$this->email_1."',
-                                                            email_2     = '".$this->email_2."',
-                                                            tel_1       = '".$this->tel_1."',
-                                                            tel_2       = '".$this->tel_2."'
+                                                            num_residence   = '".$this->num_residence."',
+                                                            nom             = '".$this->nom."',
+                                                            adresse         = '".$this->adresse."',
+                                                            cp_res          = '".$this->cp_res."', 
+                                                            ville           = '".$this->ville."'
                                                       WHERE
-                                                            rowid       = ".$id."
+                                                            rowid           = ".$id."
                                                         ";
         $resql=$this->db->query($sql);
         if ($resql)
@@ -298,7 +255,7 @@ class SyndicProprietaire // extends CommonObject
 
         //Retrieve next id
         $sql = "SELECT rowid 
-                FROM ".MAIN_DB_PREFIX."syndic_proprietaire 
+                FROM ".MAIN_DB_PREFIX."syndic_residence 
                 WHERE rowid > ".$id." 
                 ORDER BY rowid LIMIT 1";
         $resql=$this->db->query($sql);
@@ -308,7 +265,7 @@ class SyndicProprietaire // extends CommonObject
 
         //Retrieve previous id
         $sql = "SELECT rowid 
-                FROM ".MAIN_DB_PREFIX."syndic_proprietaire 
+                FROM ".MAIN_DB_PREFIX."syndic_residence 
                 WHERE rowid < ".$id." 
                 ORDER BY rowid DESC LIMIT 1";
         $resql=$this->db->query($sql);

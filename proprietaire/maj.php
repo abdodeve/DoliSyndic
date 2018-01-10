@@ -1,6 +1,15 @@
 <?php
-/* 
- * Copyright (C) 2017-2018	Abdelhadi Habchi	<abdelhadi.deve@gmail.com>
+/* Copyright (C) 2016-2018 MarocGeek  <contact@marocgeek.com>
+ *
+ *This Software Created By MarocGeek Team
+ * A software for Manage Syndic Activities
+ * SiteWeb : www.marocgeek.com
+ *
+ */
+
+/**
+ *  \ingroup    syndic/proprietaire
+ *  \brief      Page mise a jour des données
  */
 
 require '../../main.inc.php';
@@ -9,7 +18,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/class/html.formfile.class.php';
 llxHeader();
 ?>
 
-<div ng-app="majApp">
+<div ng-app="majApp" ng-cloak>
 <div ng-controller="majCtrl">
 <table summary="" class="centpercent notopnoleftnoright" style="margin-bottom: 2px;">
 		<tbody>
@@ -46,11 +55,35 @@ llxHeader();
 			<td>Ville</td>
 			<td><input name="ville" size="40" value="" ng-model="ville"></td>
 		</tr>
+        <tr>
+            <td>Adresse 1</td>
+            <td><input name="adresse_1" size="40" value="" ng-model="adresse_1"></td>
+        </tr>
+        <tr>
+            <td>Adresse 2</td>
+            <td><input name="adresse_2" size="40" value="" ng-model="adresse_2"></td>
+        </tr>
+        <tr>
+            <td>Email 1</td>
+            <td><input name="email_1" size="40" value="" ng-model="email_1"></td>
+        </tr>
+        <tr>
+            <td>Email 2</td>
+            <td><input name="email_2" size="40" value="" ng-model="email_2"></td>
+        </tr>
+        <tr>
+            <td>Tel 1</td>
+            <td><input name="tel_1" size="40" value="" ng-model="tel_1"></td>
+        </tr>
+        <tr>
+            <td>Tel 2</td>
+            <td><input name="tel_2" size="40" value="" ng-model="tel_2"></td>
+        </tr>
 		</table>
 	</div>
 		<div class="center">
                     <input type="button" class="button" name="valider" ng-click="funcValider()" value="Valider">
-                    <input type="submit" class="button" name="annuler" value="Annuler">
+                    <a href="liste.php" class="button" name="annuler" value="Annuler">Annuler</a>
 		</div>
 	</form>
 </div>
@@ -58,6 +91,6 @@ llxHeader();
 <?php
 llxFooter();
 ?>
-<script src="proprietaire.js"></script>
+<script src="script.js"></script>
 <?php
 $db->close();

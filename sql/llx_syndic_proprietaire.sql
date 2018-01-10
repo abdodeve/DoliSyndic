@@ -14,15 +14,22 @@
 -- You should have received a copy of the GNU General Public License
 -- along with this program. If not, see <http://www.gnu.org/licenses/>.
 --
--- Table of journals for accountancy
+-- Table of llx_syndic_proprietaire
 -- ============================================================================
 
-create table llx_proprietaire
+create table llx_syndic_proprietaire
 (
   rowid             integer AUTO_INCREMENT PRIMARY KEY,
+  fk_proprietaire   integer ,
   nom               varchar(200),
   prenom            varchar(200),
   titre             varchar(200),
   civilite          varchar(200),
-  ville             varchar(200)
+  ville             varchar(200),
+  adresse_1         varchar(200),
+  adresse_2         varchar(200),
+  email_1           varchar(200),
+  email_2           varchar(200),
+  tel_1             varchar(200),
+  tel_2             varchar(200)
 )ENGINE=innodb;

@@ -1,16 +1,15 @@
 <?php
-/* Copyright (C) 2016-2018 Laurent Destailleur  <abdelhadi.deve@gmail.com>
+/* Copyright (C) 2016-2018 MarocGeek  <contact@marocgeek.com>
  *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3 of the License, or
- * (at your option) any later version.
+ *This Software Created By MarocGeek Team
+ * A software for Manage Syndic Activities
+ * SiteWeb : www.marocgeek.com
+ *
  */
 
 /**
- *  \file       htdocs/syndic/class/proprietaireHandler.class.php
- *  \ingroup    syndic
- *  \brief      This file is an example for a class file
+ *  \ingroup    syndic/proprietaire
+ *  \brief      Prepare methodes for request/ajax request
  */
 
 /**
@@ -32,26 +31,44 @@ class proprietaireHandler extends SyndicProprietaire {
                 echo $this->fetch();
                 break;
             case "create":
-                $this->nom      = $data->nom;
-                $this->prenom   = $data->prenom ;
-                $this->titre    = $data->titre ;
-                $this->ville    = $data->ville ;
-                $this->civilite = $data->civilite ;
+                $this->nom          = $data->nom;
+                $this->prenom       = $data->prenom ;
+                $this->titre        = $data->titre ;
+                $this->ville        = $data->ville ;
+                $this->civilite     = $data->civilite ;
+                $this->adresse_1    = $data->adresse_1 ;
+                $this->adresse_2    = $data->adresse_2 ;
+                $this->email_1      = $data->email_1 ;
+                $this->email_2      = $data->email_2 ;
+                $this->tel_1        = $data->tel_1 ;
+                $this->tel_2        = $data->tel_2 ;
                 echo $this->create();
                 break;
             case "update":
-                $this->nom      = $data->nom;
-                $this->prenom   = $data->prenom ;
-                $this->titre    = $data->titre ;
-                $this->ville    = $data->ville ;
-                $this->civilite = $data->civilite ;
+                $this->nom          = $data->nom;
+                $this->prenom       = $data->prenom ;
+                $this->titre        = $data->titre ;
+                $this->ville        = $data->ville ;
+                $this->civilite     = $data->civilite ;
+                $this->adresse_1    = $data->adresse_1 ;
+                $this->adresse_2    = $data->adresse_2 ;
+                $this->email_1      = $data->email_1 ;
+                $this->email_2      = $data->email_2 ;
+                $this->tel_1        = $data->tel_1 ;
+                $this->tel_2        = $data->tel_2 ;
                 echo $this->update($data->id);
                 break;
             case "delete":
                 echo $this->delete($data->arr_ids);
                 break;
-           case "search":
-                echo $this->fetch($data->id);
+            case "search":
+                echo $this->fetch($data->s);
+                break;
+            case "single":
+                echo $this->fetch(null,$data->id);
+                break;
+           case "pagination":
+                echo $this->next_previous_id($data->id);
                 break;
            case "method3":
                 $this->doMethod1();
@@ -75,3 +92,4 @@ $posts_data         = json_decode($posts_data_json);
 //Instance & execute this class
 $propHandler = new proprietaireHandler($db);
 $propHandler->execute($posts_data);
+

@@ -64,3 +64,173 @@ Stack trace:
   thrown in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 43
 [15-Dec-2017 22:30:21 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 142
 [15-Dec-2017 22:31:38 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 142
+[19-Dec-2017 23:09:51 UTC] PHP Warning:  array_merge(): Argument #1 is not an array in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 77
+[19-Dec-2017 23:09:54 UTC] PHP Warning:  array_merge(): Argument #1 is not an array in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 77
+[19-Dec-2017 23:11:15 UTC] PHP Warning:  array_merge(): Argument #1 is not an array in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 77
+[19-Dec-2017 23:11:31 UTC] PHP Warning:  array_merge(): Argument #1 is not an array in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 77
+[19-Dec-2017 23:11:42 UTC] PHP Warning:  array_merge(): Argument #1 is not an array in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 77
+[19-Dec-2017 23:12:03 UTC] PHP Warning:  array_merge(): Argument #1 is not an array in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 77
+[19-Dec-2017 23:12:31 UTC] PHP Warning:  array_merge(): Argument #1 is not an array in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 77
+[19-Dec-2017 23:14:12 UTC] PHP Warning:  array_merge(): Argument #1 is not an array in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 77
+[19-Dec-2017 23:16:29 UTC] PHP Warning:  array_merge(): Argument #1 is not an array in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 77
+[19-Dec-2017 23:16:44 UTC] PHP Warning:  array_merge(): Argument #1 is not an array in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 77
+[19-Dec-2017 23:17:29 UTC] PHP Warning:  array_merge(): Argument #1 is not an array in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 77
+[20-Dec-2017 00:23:30 UTC] PHP Warning:  json_decode() expects parameter 1 to be string, array given in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 77
+[20-Dec-2017 00:23:30 UTC] PHP Warning:  json_decode() expects parameter 1 to be string, array given in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 77
+[23-Dec-2017 16:58:57 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 16:58:57 America/Chicago] PHP Stack trace:
+[23-Dec-2017 16:58:57 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 16:58:57 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 16:58:57 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 16:58:57 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[23-Dec-2017 18:39:33 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 18:39:33 America/Chicago] PHP Stack trace:
+[23-Dec-2017 18:39:33 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 18:39:33 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 18:39:33 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 18:39:33 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[23-Dec-2017 18:39:44 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 18:39:44 America/Chicago] PHP Stack trace:
+[23-Dec-2017 18:39:44 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 18:39:44 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 18:39:44 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 18:39:44 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[23-Dec-2017 18:42:07 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 18:42:07 America/Chicago] PHP Stack trace:
+[23-Dec-2017 18:42:07 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 18:42:07 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 18:42:07 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 18:42:07 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[23-Dec-2017 18:42:41 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 18:42:41 America/Chicago] PHP Stack trace:
+[23-Dec-2017 18:42:41 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 18:42:41 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 18:42:41 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 18:42:41 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[23-Dec-2017 18:43:02 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 18:43:02 America/Chicago] PHP Stack trace:
+[23-Dec-2017 18:43:02 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 18:43:02 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 18:43:02 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 18:43:02 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[23-Dec-2017 18:43:32 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 18:43:32 America/Chicago] PHP Stack trace:
+[23-Dec-2017 18:43:32 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 18:43:32 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 18:43:32 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 18:43:32 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[23-Dec-2017 18:44:20 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 18:44:20 America/Chicago] PHP Stack trace:
+[23-Dec-2017 18:44:20 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 18:44:20 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 18:44:20 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 18:44:20 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[23-Dec-2017 18:47:03 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 18:47:03 America/Chicago] PHP Stack trace:
+[23-Dec-2017 18:47:03 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 18:47:03 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 18:47:03 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 18:47:03 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[23-Dec-2017 18:49:00 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 18:49:00 America/Chicago] PHP Stack trace:
+[23-Dec-2017 18:49:00 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 18:49:00 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 18:49:00 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 18:49:00 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[23-Dec-2017 19:43:16 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 19:43:16 America/Chicago] PHP Stack trace:
+[23-Dec-2017 19:43:16 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 19:43:16 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 19:43:16 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 19:43:16 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[23-Dec-2017 19:45:11 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 19:45:11 America/Chicago] PHP Stack trace:
+[23-Dec-2017 19:45:11 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 19:45:11 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 19:45:11 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 19:45:11 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[23-Dec-2017 19:49:23 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 19:49:23 America/Chicago] PHP Stack trace:
+[23-Dec-2017 19:49:23 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 19:49:23 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 19:49:23 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 19:49:23 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[23-Dec-2017 19:51:06 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 19:51:06 America/Chicago] PHP Stack trace:
+[23-Dec-2017 19:51:06 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 19:51:06 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 19:51:06 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 19:51:06 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[23-Dec-2017 19:51:58 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 19:51:58 America/Chicago] PHP Stack trace:
+[23-Dec-2017 19:51:58 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 19:51:58 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 19:51:58 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 19:51:58 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[23-Dec-2017 20:12:06 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 20:12:06 America/Chicago] PHP Stack trace:
+[23-Dec-2017 20:12:06 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 20:12:06 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 20:12:06 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 20:12:06 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[23-Dec-2017 20:13:55 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[23-Dec-2017 20:13:55 America/Chicago] PHP Stack trace:
+[23-Dec-2017 20:13:55 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[23-Dec-2017 20:13:55 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[23-Dec-2017 20:13:55 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[23-Dec-2017 20:13:55 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[24-Dec-2017 04:06:42 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[24-Dec-2017 04:06:42 America/Chicago] PHP Stack trace:
+[24-Dec-2017 04:06:42 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[24-Dec-2017 04:06:42 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[24-Dec-2017 04:06:42 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[24-Dec-2017 04:06:42 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[24-Dec-2017 04:07:15 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[24-Dec-2017 04:07:15 America/Chicago] PHP Stack trace:
+[24-Dec-2017 04:07:15 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[24-Dec-2017 04:07:15 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[24-Dec-2017 04:07:15 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[24-Dec-2017 04:07:15 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[24-Dec-2017 04:12:42 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[24-Dec-2017 04:12:42 America/Chicago] PHP Stack trace:
+[24-Dec-2017 04:12:42 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[24-Dec-2017 04:12:42 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[24-Dec-2017 04:12:42 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[24-Dec-2017 04:12:42 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[24-Dec-2017 04:18:19 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[24-Dec-2017 04:18:19 America/Chicago] PHP Stack trace:
+[24-Dec-2017 04:18:19 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[24-Dec-2017 04:18:19 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[24-Dec-2017 04:18:19 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[24-Dec-2017 04:18:19 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[24-Dec-2017 06:25:06 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[24-Dec-2017 06:25:06 America/Chicago] PHP Stack trace:
+[24-Dec-2017 06:25:06 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[24-Dec-2017 06:25:06 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[24-Dec-2017 06:25:06 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[24-Dec-2017 06:25:06 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[24-Dec-2017 06:32:59 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[24-Dec-2017 06:32:59 America/Chicago] PHP Stack trace:
+[24-Dec-2017 06:32:59 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[24-Dec-2017 06:32:59 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[24-Dec-2017 06:32:59 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[24-Dec-2017 06:32:59 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[24-Dec-2017 06:34:33 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[24-Dec-2017 06:34:33 America/Chicago] PHP Stack trace:
+[24-Dec-2017 06:34:33 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[24-Dec-2017 06:34:33 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[24-Dec-2017 06:34:33 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[24-Dec-2017 06:34:33 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[24-Dec-2017 07:29:47 America/Chicago] PHP Fatal error:  Call to a member function fetch_object() on boolean in /home/marocgee/public_html/gestion-tva/htdocs/core/db/mysqli.class.php on line 285
+[24-Dec-2017 07:29:47 America/Chicago] PHP Stack trace:
+[24-Dec-2017 07:29:47 America/Chicago] PHP   1. {main}() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:0
+[24-Dec-2017 07:29:47 America/Chicago] PHP   2. proprietaireHandler->execute() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:80
+[24-Dec-2017 07:29:47 America/Chicago] PHP   3. SyndicProprietaire->next_previous_id() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php:57
+[24-Dec-2017 07:29:47 America/Chicago] PHP   4. DoliDBMysqli->fetch_object() /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php:222
+[01-Jan-2018 07:52:35 America/Chicago] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 201
+[01-Jan-2018 07:52:35 America/Chicago] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 201
+[01-Jan-2018 07:52:42 America/Chicago] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 201
+[01-Jan-2018 07:52:42 America/Chicago] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 201
+[01-Jan-2018 07:55:06 America/Chicago] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 201
+[01-Jan-2018 07:55:06 America/Chicago] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaire.class.php on line 201
+[04-Jan-2018 13:46:45 America/Chicago] PHP Recoverable fatal error:  Object of class mysqli_result could not be converted to string in /home/marocgee/public_html/gestion-tva/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php on line 65
