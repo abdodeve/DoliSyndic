@@ -13,3 +13,39 @@ div.pagination li.pagination a.inactive {
 .selectpicker .clear {
   padding : 0 ;
 }
+.ui-datepicker{
+  z-index:20 !important ;
+}
+table  tr  td  label {
+  font-weight: normal;
+  margin-right : 30px ;
+  cursor:pointer ;
+}
+table  tr  td  label input[type=radio]{
+    cursor:pointer ;
+}
+
+table.centpercent.notopnoleftnoright {
+  margin-bottom: 15px !important;
+}
+
+.tab-content.configuration{
+  margin-top: 30px;
+}
+
+table {
+  font-size: 13px;
+}
+
+.tab-content.configuration table td.right {
+  text-align:center ;
+}
+.radio_input .form-control {
+  padding: 0 .75rem;
+}
+.radio_input .input-group-text input[type=radio]{
+  cursor: pointer;
+}
+.radio_input label{
+  margin-bottom:0;
+}

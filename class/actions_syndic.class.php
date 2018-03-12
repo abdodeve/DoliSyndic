@@ -116,7 +116,7 @@ class ActionsSyndic
 }	
 public function printCommonFooter($parameters, &$object, &$action, $hookmanager){
            ?>
-            <script type="text/javascript" src="<?php echo DOL_URL_ROOT ?>/syndic/js/script.js"></script>
+						<!-- <script type="text/javascript" src="<?php //echo DOL_URL_ROOT ?>/syndic/js/script.js"></script> -->
            <?php
 }
 	

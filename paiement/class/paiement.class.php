@@ -21,12 +21,14 @@ class SyndicPaiement // extends CommonObject
 	/**
 	* Paiement
 	*/
-		var $fk_appartement ;
+		var $fk_propriete ;
 		var $num_paiement ;
     var $date_paiement ;
 		var $mode_paiement ;
 		var $affectation_paiement ;
 		var $montant_paiement; 
+		var $date_recu ;
+		var $charge_recu ;
 	
 	/**
 	 *	Constructor
@@ -51,20 +53,24 @@ class SyndicPaiement // extends CommonObject
 		$this->db->begin();   // Debut transaction
       
 		$sql = "INSERT INTO ".MAIN_DB_PREFIX."syndic_paiement(
-						fk_appartement,
+						fk_propriete,
 						num_paiement,
 						date_paiement,
 						mode_paiement,
 						affectation_paiement,
-						montant_paiement
+						montant_paiement,
+						date_recu,
+						charge_recu
 						)
 						VALUES (
-						  '".$this->fk_appartement."',
+						  '".$this->fk_propriete."',
 						  '".$this->num_paiement."',
-							'".$this->date_paiement."',
+							STR_TO_DATE('".$this->date_paiement."', '%d/%m/%Y'),
 							'".$this->mode_paiement."',
 							'".$this->affectation_paiement."',
-							'".$this->montant_paiement."'
+							'".$this->montant_paiement."',
+							STR_TO_DATE('".$this->date_recu."', '%d/%m/%Y'),
+							'".$this->charge_recu."'
 						)";
     	$resql=$this->db->query($sql);
 			if ($resql)
@@ -77,7 +83,7 @@ class SyndicPaiement // extends CommonObject
 				else
 				{
 					$this->db->rollback();
-					return $sql ; //return -1;
+					return $sql ;
 				}
       }else{
                 return $sql ;
@@ -102,32 +108,30 @@ class SyndicPaiement // extends CommonObject
                         date_paiement            like '%".$s."%' or
                         mode_paiement            like '%".$s."%' or
                         affectation_paiement     like '%".$s."%' or
-                        montant_paiement         like '%".$s."%' 
+                        montant_paiement         like '%".$s."%' or
+												num_propriete				   like '%".$s."%'
                 ";
     }elseif(!empty($id)){
-        $where = "where rowid = ".$id;
+        $where = "where ".MAIN_DB_PREFIX."syndic_paiement.rowid = ".$id;
      }
 	$sql = "SELECT 
-									rowid,
+									".MAIN_DB_PREFIX."syndic_paiement.rowid,
 									num_paiement, 
 									date_paiement, 
 									mode_paiement, 
 									affectation_paiement, 
 									montant_paiement, 
 									date_recu, 
+									charge_recu,
+									num_propriete,
+									date_recu,
 									charge_recu
 					FROM 
-									".MAIN_DB_PREFIX."syndic_paiement ".$where ;
-		
-//     $sql = "select 
-//                    rowid,
-// 								   num_paiement,
-//                    date_paiement, 
-//                    mode_paiement, 
-//                    affectation_paiement, 
-//                    montant_paiement 
-//             FROM 
-//                    ".MAIN_DB_PREFIX."syndic_paiement ".$where ;
+									".MAIN_DB_PREFIX."syndic_paiement 
+					LEFT JOIN 
+									".MAIN_DB_PREFIX."syndic_propriete 
+					ON
+									".MAIN_DB_PREFIX."syndic_paiement.fk_propriete=".MAIN_DB_PREFIX."syndic_propriete.rowid ".$where ;
 
     $resql=$this->db->query($sql);
     if ($resql)
@@ -148,7 +152,10 @@ class SyndicPaiement // extends CommonObject
                                                             'mode_paiement'         =>$obj->mode_paiement,
                                                             'affectation_paiement'  =>$obj->affectation_paiement,
                                                             'montant_paiement'      =>$obj->montant_paiement,
-                                                            'sup'                   => true);
+																														'num_propriete'       =>$obj->num_propriete,
+																													 	'date_recu'							=>$obj->date_recu,
+																														'charge_recu'						=>$obj->charge_recu,
+																													  'sup'                   => true );
                                         }
                                         $i++;
                                 }
@@ -224,12 +231,14 @@ class SyndicPaiement // extends CommonObject
 
         $sql = "update ".MAIN_DB_PREFIX."syndic_paiement
 																													SET 
-																																fk_appartement           = '".$this->fk_appartement."',
+																																fk_propriete           = '".$this->fk_propriete."',
 																																num_paiement             = '".$this->num_paiement."',
-																																date_paiement            = '".$this->date_paiement."',
+																																date_paiement            = STR_TO_DATE('".$this->date_paiement."', '%d/%m/%Y'),
 																																mode_paiement            = '".$this->mode_paiement."',
 																																affectation_paiement     = '".$this->affectation_paiement."',
-																																montant_paiement         = '".$this->montant_paiement."'
+																																montant_paiement         = '".$this->montant_paiement."' ,
+																																date_recu								 = STR_TO_DATE('".$this->date_recu."', '%d/%m/%Y') ,
+																																charge_recu							 = '".$this->charge_recu."'
 																													WHERE
 																																rowid                    = ".$id."
 																														";
@@ -239,15 +248,15 @@ class SyndicPaiement // extends CommonObject
             if (! $error)
             {
                 $this->db->commit();
-                return $resql;
+                return 'Success';
             }
             else
             {
                 $this->db->rollback();
-                return $sql; //-1;
+                return "Error in sql : ".$sql; //-1;
             }
         }else{
-            return $sql; //-1;
+            return "Error in sql : ".$sql; //-1;
         }
 
     }
@@ -293,30 +302,28 @@ class SyndicPaiement // extends CommonObject
         return $arr_prev_next ;
     }
 	
-	
-	    /**
-     * *********************** Combo : Retrieve Liste Appartement & dependencies ***********************
+	   /**
+     * *********************** Combo : Retrieve Liste propriete & dependencies ***********************
      *
      **/
 	
-	public function fetch_combo_appartement(){
+	public function fetch_combo_propriete(){
  
-		//return 'abc' ;
 		$sql = "SELECT 
-									".MAIN_DB_PREFIX."syndic_appartement.rowid,
+									".MAIN_DB_PREFIX."syndic_propriete.rowid,
 									".MAIN_DB_PREFIX."syndic_paiement.rowid as id_paiement,
-									".MAIN_DB_PREFIX."syndic_appartement.num_appartement,
+									".MAIN_DB_PREFIX."syndic_propriete.num_propriete,
 									".MAIN_DB_PREFIX."syndic_proprietaire.nom,
 									".MAIN_DB_PREFIX."syndic_proprietaire.prenom 
 						FROM 
-										".MAIN_DB_PREFIX."syndic_appartement 
+										".MAIN_DB_PREFIX."syndic_propriete 
 									LEFT JOIN 
 										".MAIN_DB_PREFIX."syndic_proprietaire 
 									ON 
-										".MAIN_DB_PREFIX."syndic_appartement.rowid = ".MAIN_DB_PREFIX."syndic_proprietaire.fk_appartement
+										".MAIN_DB_PREFIX."syndic_propriete.rowid = ".MAIN_DB_PREFIX."syndic_proprietaire.fk_propriete
 									LEFT JOIN ".MAIN_DB_PREFIX."syndic_paiement 
 									ON 
-										".MAIN_DB_PREFIX."syndic_paiement.fk_appartement = ".MAIN_DB_PREFIX."syndic_appartement.rowid ";
+										".MAIN_DB_PREFIX."syndic_paiement.fk_propriete = ".MAIN_DB_PREFIX."syndic_propriete.rowid ";
 		
     $resql=$this->db->query($sql);
 	//If error in Sql
@@ -326,7 +333,7 @@ class SyndicPaiement // extends CommonObject
 		{
 										$arr[]  = array('id'              =>$obj->rowid,
 																		'id_paiement'			=>$obj->id_paiement,
-																		'num_appartement' =>$obj->num_appartement,
+																		'num_propriete' =>$obj->num_propriete,
 																		'nom'    					=>$obj->nom,
 																		'prenom'          =>$obj->prenom);
 		}

@@ -8,22 +8,22 @@
  */
 
 /**
- *  \ingroup    syndic/appartement
+ *  \ingroup    syndic/propriete
  *  \brief      Core Methodes here
  */
 
 /**
- *  Class to manage Syndic Appartement
+ *  Class to manage Syndic propriete
  */
-//SyndicAppartement
-class SyndicAppartement // extends CommonObject
+//Syndicpropriete
+class SyndicPropriete // extends CommonObject
 {
 	/**
-	* Appartement
+	* propriete
 	*/
 
     var $fk_residence ;
-    var $num_appartement ;
+    var $num_propriete ;
     var $num_titre ;
     var $quote_part_terrain ;
     var $surface ;
@@ -52,9 +52,9 @@ class SyndicAppartement // extends CommonObject
 	{
 		$this->db->begin();   // Debut transaction
       
-		$sql = "INSERT INTO ".MAIN_DB_PREFIX."syndic_appartement(
+		$sql = "INSERT INTO ".MAIN_DB_PREFIX."syndic_propriete(
 						fk_residence,
-						num_appartement,
+						num_propriete,
 						num_titre,
 						quote_part_terrain,
 						surface,
@@ -62,7 +62,7 @@ class SyndicAppartement // extends CommonObject
 						)
 						VALUES (
 							'".$this->fk_residence."',
-							'".$this->num_appartement."',
+							'".$this->num_propriete."',
 							'".$this->num_titre."',
 							'".$this->quote_part_terrain."',
 							'".$this->surface."',
@@ -101,26 +101,28 @@ class SyndicAppartement // extends CommonObject
     $where = "" ;
     if(!empty($s)){
         $where = "where 
-                        fk_residence            like '%".$s."%' or
-                        num_appartement         like '%".$s."%' or
-                        num_titre               like '%".$s."%' or
-                        quote_part_terrain      like '%".$s."%' or
-						surface                 like '%".$s."%' or
-						pt_indivision           like '%".$s."%'
+                        fk_residence            										like '%".$s."%' or
+                        num_propriete         										like '%".$s."%' or
+                        num_titre               										like '%".$s."%' or
+                        quote_part_terrain      										like '%".$s."%' or
+												surface                 										like '%".$s."%' or
+												pt_indivision           										like '%".$s."%' or
+												".MAIN_DB_PREFIX."syndic_residence.nom 			like '%".$s."%'
                 ";
     }elseif(!empty($id)){
-                        $where = "where rowid = ".$id ;
+                        $where = "where ".MAIN_DB_PREFIX."syndic_propriete.rowid = ".$id ;
     }
     $sql = "select 
-                   rowid,
-                   fk_residence, 
-                   num_appartement, 
+                   ".MAIN_DB_PREFIX."syndic_propriete.rowid,
+                   ".MAIN_DB_PREFIX."syndic_residence.nom as nom_residence,
+                   num_propriete, 
                    num_titre, 
                    quote_part_terrain,
-				   surface,
-				   pt_indivision
+									 surface,
+									 pt_indivision
             FROM 
-                   ".MAIN_DB_PREFIX."syndic_appartement ".$where ;
+                   ".MAIN_DB_PREFIX."syndic_propriete LEFT JOIN ".MAIN_DB_PREFIX."syndic_residence 
+						ON 		 ".MAIN_DB_PREFIX."syndic_propriete.fk_residence = ".MAIN_DB_PREFIX."syndic_residence.rowid ".$where ;
 
     $resql=$this->db->query($sql);
     if ($resql)
@@ -136,8 +138,8 @@ class SyndicAppartement // extends CommonObject
                                         if ($obj)
                                         {
                                             $arr[]  = array('id'                 =>$obj->rowid,
-                                                            'fk_residence'       =>$obj->fk_residence,
-                                                            'num_appartement'    =>$obj->num_appartement,
+                                                            'nom_residence'      =>$obj->nom_residence,
+                                                            'num_propriete'    =>$obj->num_propriete,
                                                             'num_titre'          =>$obj->num_titre,
                                                             'quote_part_terrain' =>$obj->quote_part_terrain,
                                                             'surface'            =>$obj->surface,
@@ -157,7 +159,7 @@ class SyndicAppartement // extends CommonObject
 			{
 			                    //Fail
 								$this->db->rollback();
-                                return 'resql is false' ;
+                                return 'resql is false : '.$sql ;
 			}
     }
 
@@ -181,7 +183,7 @@ class SyndicAppartement // extends CommonObject
 			$ids .= $value ;
 		}
 		$sql = "DELETE 
-						FROM ".MAIN_DB_PREFIX."syndic_appartement 
+						FROM ".MAIN_DB_PREFIX."syndic_propriete 
 						WHERE 
 							  rowid in (".$ids.");";
 		 	$resql=$this->db->query($sql);
@@ -216,10 +218,10 @@ class SyndicAppartement // extends CommonObject
 
         $this->db->begin();   // Debut transaction
 
-        $sql = "update ".MAIN_DB_PREFIX."syndic_appartement
+        $sql = "update ".MAIN_DB_PREFIX."syndic_propriete
                                                               SET
                                                                     fk_residence            = '".$this->fk_residence."',
-                                                                    num_appartement         = '".$this->num_appartement."',
+                                                                    num_propriete         = '".$this->num_propriete."',
                                                                     num_titre               = '".$this->num_titre."',
                                                                     quote_part_terrain      = '".$this->quote_part_terrain."',
                                                                     surface                 = ".$this->surface.",
@@ -264,7 +266,7 @@ class SyndicAppartement // extends CommonObject
 
         //Retrieve next id
         $sql = "SELECT rowid 
-                FROM ".MAIN_DB_PREFIX."syndic_appartement 
+                FROM ".MAIN_DB_PREFIX."syndic_propriete 
                 WHERE rowid > ".$id." 
                 ORDER BY rowid LIMIT 1";
         $resql=$this->db->query($sql);
@@ -274,7 +276,7 @@ class SyndicAppartement // extends CommonObject
 
         //Retrieve previous id
         $sql = "SELECT rowid 
-                FROM ".MAIN_DB_PREFIX."syndic_appartement 
+                FROM ".MAIN_DB_PREFIX."syndic_propriete 
                 WHERE rowid < ".$id." 
                 ORDER BY rowid DESC LIMIT 1";
         $resql=$this->db->query($sql);
@@ -286,5 +288,41 @@ class SyndicAppartement // extends CommonObject
         $arr_prev_next = json_encode($arr_prev_next) ;
         return $arr_prev_next ;
     }
+	
+		    /**
+     * *********************** Combo : Retrieve Liste Residence & dependencies ***********************
+     *
+     **/
+	
+	public function fetch_combo_residence(){
+ 
+		$sql = "SELECT 
+											".MAIN_DB_PREFIX."syndic_residence.rowid,
+											".MAIN_DB_PREFIX."syndic_propriete.rowid as id_propriete,
+											".MAIN_DB_PREFIX."syndic_residence.nom,
+											".MAIN_DB_PREFIX."syndic_residence.num_residence,
+											".MAIN_DB_PREFIX."syndic_residence.ville
+						FROM
+											".MAIN_DB_PREFIX."syndic_residence 
+						LEFT JOIN 
+											".MAIN_DB_PREFIX."syndic_propriete 
+						ON 
+											".MAIN_DB_PREFIX."syndic_residence.rowid = ".MAIN_DB_PREFIX."syndic_propriete.fk_residence";
+		
+    $resql=$this->db->query($sql);
+	//If error in Sql
+	if(!$resql) return 'Erreur innatendue : '.$sql ;
+		
+	while ($obj = $resql->fetch_object())
+		{
+										$arr[]  = array('id'             	  =>$obj->rowid,
+																		'id_propriete'		=>$obj->id_propriete,
+																		'nom'         		 	=>$obj->nom,
+																		'num_residence' 		=>$obj->num_residence,
+																		'ville'    					=>$obj->ville);
+		}
+			$arrJson = json_encode($arr);
+			return $arrJson ;
+   }
     
 }

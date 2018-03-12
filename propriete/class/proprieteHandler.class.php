@@ -8,20 +8,20 @@
  */
 
 /**
- *  \ingroup    syndic/appartement
+ *  \ingroup    syndic/propriete
  *  \brief      Prepare methodes for request/ajax request
  */
 
 /**
- *  Class to manage Syndic Appartement
+ *  Class to manage Syndic propriete
  */
-//appartementHandler
+//proprieteHandler
 require '../../../main.inc.php';
-require_once 'appartement.class.php';
+require_once 'propriete.class.php';
 
 
 
-class appartementHandler extends SyndicAppartement {
+class proprieteHandler extends SyndicPropriete {
 
     function execute($data) {
 
@@ -32,7 +32,7 @@ class appartementHandler extends SyndicAppartement {
                 break;
             case "create":
                 $this->fk_residence         = $data->fk_residence ;
-                $this->num_appartement      = $data->num_appartement ;
+                $this->num_propriete      = $data->num_propriete ;
                 $this->num_titre            = $data->num_titre ;
                 $this->quote_part_terrain   = $data->quote_part_terrain ;
                 $this->surface              = $data->surface ;
@@ -41,7 +41,7 @@ class appartementHandler extends SyndicAppartement {
                 break;
             case "update":
                 $this->fk_residence         = $data->fk_residence ;
-                $this->num_appartement      = $data->num_appartement ;
+                $this->num_propriete      = $data->num_propriete ;
                 $this->num_titre            = $data->num_titre ;
                 $this->quote_part_terrain   = $data->quote_part_terrain ;
                 $this->surface              = $data->surface ;
@@ -60,8 +60,8 @@ class appartementHandler extends SyndicAppartement {
            case "pagination":
                 echo $this->next_previous_id($data->id);
                 break;
-           case "method3":
-                $this->doMethod1();
+           case "fetch_combo_residence":
+                echo $this->fetch_combo_residence();
                 break;
 
         }
@@ -80,6 +80,6 @@ $posts_data_json    = file_get_contents("php://input");
 $posts_data         = json_decode($posts_data_json);
 
 //Instance & execute this class
-$apparHandler = new appartementHandler($db);
-$apparHandler->execute($posts_data);
+$propHandler = new proprieteHandler($db);
+$propHandler->execute($posts_data);
 

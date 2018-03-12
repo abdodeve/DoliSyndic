@@ -14,6 +14,7 @@
 
 require '../../main.inc.php';
 llxHeader('',$title='Liste des proprietaires');
+include '../header.php';
 ?>
 
 <div ng-app="listeApp" ng-cloak>

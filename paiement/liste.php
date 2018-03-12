@@ -13,7 +13,8 @@
  */
 
 require '../../main.inc.php';
-llxHeader('',$title='Liste des paiment');
+llxHeader('',$title='Liste des paiments');
+include '../header.php';
 ?>
 
 <div ng-app="listeApp" ng-cloak>

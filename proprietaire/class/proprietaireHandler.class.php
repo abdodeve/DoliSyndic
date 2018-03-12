@@ -31,31 +31,33 @@ class proprietaireHandler extends SyndicProprietaire {
                 echo $this->fetch();
                 break;
             case "create":
-                $this->nom          = $data->nom;
-                $this->prenom       = $data->prenom ;
-                $this->titre        = $data->titre ;
-                $this->ville        = $data->ville ;
-                $this->civilite     = $data->civilite ;
-                $this->adresse_1    = $data->adresse_1 ;
-                $this->adresse_2    = $data->adresse_2 ;
-                $this->email_1      = $data->email_1 ;
-                $this->email_2      = $data->email_2 ;
-                $this->tel_1        = $data->tel_1 ;
-                $this->tel_2        = $data->tel_2 ;
+                $this->nom              = $data->nom;
+                $this->prenom           = $data->prenom ;
+                $this->titre            = $data->titre ;
+                $this->ville            = $data->ville ;
+                $this->civilite         = $data->civilite ;
+                $this->adresse_1        = $data->adresse_1 ;
+                $this->adresse_2        = $data->adresse_2 ;
+                $this->email_1          = $data->email_1 ;
+                $this->email_2          = $data->email_2 ;
+                $this->tel_1            = $data->tel_1 ;
+                $this->tel_2            = $data->tel_2 ;
+                $this->fk_propriete   = $data->fk_propriete;
                 echo $this->create();
                 break;
             case "update":
-                $this->nom          = $data->nom;
-                $this->prenom       = $data->prenom ;
-                $this->titre        = $data->titre ;
-                $this->ville        = $data->ville ;
-                $this->civilite     = $data->civilite ;
-                $this->adresse_1    = $data->adresse_1 ;
-                $this->adresse_2    = $data->adresse_2 ;
-                $this->email_1      = $data->email_1 ;
-                $this->email_2      = $data->email_2 ;
-                $this->tel_1        = $data->tel_1 ;
-                $this->tel_2        = $data->tel_2 ;
+                $this->nom              = $data->nom;
+                $this->prenom           = $data->prenom ;
+                $this->titre            = $data->titre ;
+                $this->ville            = $data->ville ;
+                $this->civilite         = $data->civilite ;
+                $this->adresse_1        = $data->adresse_1 ;
+                $this->adresse_2        = $data->adresse_2 ;
+                $this->email_1          = $data->email_1 ;
+                $this->email_2          = $data->email_2 ;
+                $this->tel_1            = $data->tel_1 ;
+                $this->tel_2            = $data->tel_2 ;
+                $this->fk_propriete   = $data->fk_propriete;
                 echo $this->update($data->id);
                 break;
             case "delete":
@@ -70,9 +72,12 @@ class proprietaireHandler extends SyndicProprietaire {
            case "pagination":
                 echo $this->next_previous_id($data->id);
                 break;
-           case "method3":
-                $this->doMethod1();
+            case "fetch_combo_propriete":
+                echo $this->fetch_combo_propriete();
                 break;
+            default  :
+              echo 'test' ;
+            break ;
 
         }
     }

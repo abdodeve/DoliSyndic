@@ -21,6 +21,7 @@ class SyndicProprietaire // extends CommonObject
 	/**
 	* Proprieties
 	*/
+		var $fk_propriete ;
 		var $nom ;
 		var $prenom ;
 		var $titre ;
@@ -62,11 +63,12 @@ class SyndicProprietaire // extends CommonObject
 						civilite,
 						ville,
 						adresse_1, 
-                        adresse_2, 
-                        email_1, 
-                        email_2, 
-                        tel_1, 
-                        tel_2
+						adresse_2, 
+						email_1, 
+						email_2, 
+						tel_1,
+						tel_2,
+						fk_propriete
 						)
 						VALUES (
 							'".$this->nom."',
@@ -79,7 +81,8 @@ class SyndicProprietaire // extends CommonObject
 							'".$this->email_1."',
 							'".$this->email_2."',
 							'".$this->tel_1."',
-							'".$this->tel_2."'
+							'".$this->tel_2."',
+							'".$this->fk_propriete."'
 						)";
     	$resql=$this->db->query($sql);
 			if ($resql)
@@ -113,38 +116,42 @@ class SyndicProprietaire // extends CommonObject
     $where = "" ;
     if(!empty($s)){
         $where = "where
-                        nom         like '%".$s."%' or
-                        prenom      like '%".$s."%' or
-                        titre       like '%".$s."%' or
-                        civilite    like '%".$s."%' or
-                        ville       like '%".$s."%' or
-                        adresse_1   like '%".$s."%' or
-                        adresse_2   like '%".$s."%' or
-                        email_1     like '%".$s."%' or
-                        email_2     like '%".$s."%' or
-                        tel_1       like '%".$s."%' or
-                        tel_2       like '%".$s."%'
+                        nom         		like '%".$s."%' or
+                        prenom      		like '%".$s."%' or
+                        titre       		like '%".$s."%' or
+                        civilite    		like '%".$s."%' or
+                        ville       		like '%".$s."%' or
+                        adresse_1   		like '%".$s."%' or
+                        adresse_2  		  like '%".$s."%' or
+                        email_1     		like '%".$s."%' or
+                        email_2     		like '%".$s."%' or
+                        tel_1       		like '%".$s."%' or
+                        tel_2       		like '%".$s."%' or
+												num_propriete like '%".$s."%'
                 ";
 
     }elseif (!empty($id)){
-        $where = "where rowid = {$id}" ;
+        $where = "where ".MAIN_DB_PREFIX."syndic_proprietaire.rowid = {$id}" ;
     }
 
-    $sql = "select 
-                    rowid,
-                    nom, 
-                    prenom, 
-                    titre, 
-                    civilite, 
-                    ville, 
-                    adresse_1, 
-                    adresse_2, 
-                    email_1, 
-                    email_2, 
-                    tel_1, 
-                    tel_2
-            FROM 
-                   ".MAIN_DB_PREFIX."syndic_proprietaire ".$where ;
+    $sql = "SELECT        
+										".MAIN_DB_PREFIX."syndic_proprietaire.rowid,
+										nom, 
+										prenom, 
+										titre, 
+										civilite, 
+										ville, 
+										adresse_1, 
+										adresse_2, 
+										email_1, 
+										email_2, 
+										tel_1, 
+										tel_2,
+										".MAIN_DB_PREFIX."syndic_propriete.num_propriete
+						FROM
+										".MAIN_DB_PREFIX."syndic_proprietaire LEFT JOIN ".MAIN_DB_PREFIX."syndic_propriete
+						ON
+										".MAIN_DB_PREFIX."syndic_proprietaire.fk_propriete = ".MAIN_DB_PREFIX."syndic_propriete.rowid ".$where ;
 
     $resql=$this->db->query($sql);
     if ($resql)
@@ -159,19 +166,20 @@ class SyndicProprietaire // extends CommonObject
                                         $obj = $this->db->fetch_object($resql);
                                         if ($obj)
                                         {
-                                            $arr[]  = array('id'        =>$obj->rowid,
-                                                            'nom'       =>$obj->nom,
-                                                            'prenom'    =>$obj->prenom,
-                                                            'titre'     =>$obj->titre,
-                                                            'civilite'  =>$obj->civilite,
-                                                            'ville'     =>$obj->ville,
-                                                            'adresse_1' =>$obj->adresse_1,
-                                                            'adresse_2' =>$obj->adresse_2,
-                                                            'email_1'   =>$obj->email_1,
-                                                            'email_2'   =>$obj->email_2,
-                                                            'tel_1'     =>$obj->tel_1,
-                                                            'tel_2'     =>$obj->tel_2,
-                                                            'sup'       => true);
+                                            $arr[]  = array('id'        				=>$obj->rowid,
+                                                            'nom'      				  =>$obj->nom,
+                                                            'prenom'    				=>$obj->prenom,
+                                                            'titre'     				=>$obj->titre,
+                                                            'civilite'  				=>$obj->civilite,
+                                                            'ville'     				=>$obj->ville,
+                                                            'adresse_1' 				=>$obj->adresse_1,
+                                                            'adresse_2' 				=>$obj->adresse_2,
+                                                            'email_1'   				=>$obj->email_1,
+                                                            'email_2'   				=>$obj->email_2,
+                                                            'tel_1'     				=>$obj->tel_1,
+                                                            'tel_2'     				=>$obj->tel_2,
+																														'num_propriete'   =>$obj->num_propriete,
+                                                            'sup'      				  => true);
                                         }
                                         $i++;
                                 }
@@ -247,17 +255,18 @@ class SyndicProprietaire // extends CommonObject
 
         $sql = "update ".MAIN_DB_PREFIX."syndic_proprietaire
                                                       SET 
-                                                            nom         = '".$this->nom."',
-                                                            prenom      = '".$this->prenom."',
-                                                            titre       = '".$this->titre."',
-                                                            civilite    = '".$this->civilite."',
-                                                            ville       = '".$this->ville."',
-                                                            adresse_1   = '".$this->adresse_1."',
-                                                            adresse_2   = '".$this->adresse_2."',
-                                                            email_1     = '".$this->email_1."',
-                                                            email_2     = '".$this->email_2."',
-                                                            tel_1       = '".$this->tel_1."',
-                                                            tel_2       = '".$this->tel_2."'
+                                                            nom         		= '".$this->nom."',
+                                                            prenom      		= '".$this->prenom."',
+                                                            titre      		  = '".$this->titre."',
+                                                            civilite    		= '".$this->civilite."',
+                                                            ville       		= '".$this->ville."',
+                                                            adresse_1   		= '".$this->adresse_1."',
+                                                            adresse_2   		= '".$this->adresse_2."',
+                                                            email_1     		= '".$this->email_1."',
+                                                            email_2     		= '".$this->email_2."',
+                                                            tel_1       		= '".$this->tel_1."',
+                                                            tel_2       		= '".$this->tel_2."',
+																														fk_propriete	= '".$this->fk_propriete."'
                                                       WHERE
                                                             rowid       = ".$id."
                                                         ";
@@ -320,5 +329,40 @@ class SyndicProprietaire // extends CommonObject
         $arr_prev_next = json_encode($arr_prev_next) ;
         return $arr_prev_next ;
     }
+	
+		 /**
+     * *********************** Combo : Retrieve Liste propriete & dependencies ***********************
+     *
+     **/
+	
+	public function fetch_combo_propriete(){
+ 
+		//return 'abc' ;
+		$sql = "SELECT 
+									".MAIN_DB_PREFIX."syndic_propriete.rowid,
+									".MAIN_DB_PREFIX."syndic_propriete.num_propriete,
+									".MAIN_DB_PREFIX."syndic_propriete.num_titre,
+									".MAIN_DB_PREFIX."syndic_proprietaire.rowid as id_proprietaire
+						FROM 
+										".MAIN_DB_PREFIX."syndic_propriete 
+						LEFT JOIN 
+										".MAIN_DB_PREFIX."syndic_proprietaire 
+						ON 
+										".MAIN_DB_PREFIX."syndic_proprietaire.fk_propriete = ".MAIN_DB_PREFIX."syndic_propriete.rowid";
+		
+    $resql=$this->db->query($sql);
+	//If error in Sql
+	if(!$resql) return 'Erreur innatendue : '.$sql ;
+		
+	while ($obj = $resql->fetch_object())
+		{
+										$arr[]  = array('id'              =>$obj->rowid,
+																		'num_propriete' =>$obj->num_propriete,
+																		'num_titre'    		=>$obj->num_titre,
+																	 	'id_proprietaire' =>$obj->id_proprietaire);
+		}
+			$arrJson = json_encode($arr);
+			return $arrJson ;
+   }
     
 }

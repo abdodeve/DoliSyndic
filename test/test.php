@@ -8,18 +8,16 @@
  */
 
 /**
- *  \ingroup    syndic/admin
- *  \brief      Page Display setup Row
+ *  \ingroup    syndic/proprietaire
+ *  \brief      Page Display Single Row
  */
 
 require '../../main.inc.php';
-?>
-<link rel="stylesheet" type="text/css" href="/htdocs/syndic/css/bootstrap-4.min.css"> 
-<?php
+?> <link rel="stylesheet" type="text/css" href="/htdocs/syndic/css/bootstrap.min.css"> <?php
 llxHeader('', $title='Proprietaire', 'Proprietaire', '', 0, 0, '', '','', '');
 include '../header.php';
 ?>
-    <div ng-app="setupApp" ng-controller="setupCtrl" ng-cloak>
+    <div ng-app="singleApp" ng-controller="singleCtrl" ng-cloak>
       
    <table summary="" class="centpercent notopnoleftnoright" style="margin-bottom: 2px;">
 		<tbody>
@@ -33,16 +31,18 @@ include '../header.php';
     </tr>
     </tbody>
    </table>
-    
+      
+      
       <ul class="nav nav-tabs">
-				<li class="nav-item">
-					<a class="nav-link active" href="#tab1" data-toggle="pill">Paramétres</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#tab2" data-toggle="pill">À propos</a>
-				</li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#tab1" data-toggle="pill">Paramétres</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#tab2" data-toggle="pill">À propos</a>
+      </li>
       </ul>
       
+
           <div class="tab-content configuration" id="pills-tabContent">
             <!--  Tab 1 / Tab Paramètres -->
             <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -54,59 +54,22 @@ include '../header.php';
                               <td width="80" align="right">&nbsp;</td>
                           </tr>
                           <tr class="oddeven">
-                              <td>Penalite</td>
+                              <td>Prise en charge des produits virtuels</td>
                               <td>
-																 <form class="row radio_input">
-																	 	<div class="col-md-4">
-																			<label for="penalite_static">Penalite statique
-																				<div class="input-group">
-																							<div class="input-group-prepend">
-																								<div class="input-group-text">
-																									<input type="radio" id="penalite_static" name="penalite" ng-model="isStatic" value="1">
-																								</div>
-																							</div>
-																					<input type="text" class="form-control" placeholder="Penalite statique" ng-disabled="isStatic==1 ? false : true">
-																				</div>
-																			</label>
-																		</div>
-																		<div class="col-md-4">
-																				<label for="penalite_dynamic">Penalite dynamique
-																					<div class="input-group">
-																							<div class="input-group-prepend">
-																								<div class="input-group-text">
-																								<input type="radio" id="penalite_dynamic" name="penalite" ng-model="isStatic" value="0">
-																								</div>
-																							</div>
-																						<input type="text" class="form-control" placeholder="Penalite dynamique" ng-disabled="isStatic==0 ? false : true">
-																					</div>
-																				</label>
-																		 </div>
-																	</form>
+                                Prise en charge des produits virtuels
+                                  <select class="flat" id="activate_sousproduits" name="activate_sousproduits">
+                                      <option value="1">Oui</option>
+                                      <option value="0" selected="">Non</option>
+                                  </select>
                               </td>
-                              <td class="right" align="right" class="nohover" rowspan="200">
+                              <td align="right" class="nohover" rowspan="200">
                                 <input type="submit" class="button" value="Modifier">
                               </td>
                           </tr>
                           <tr class="oddeven">
-                              <td>Charges</td>
+                              <td>Prise en charge des produits virtuels</td>
                               <td>
-                                <form class="row radio_input">
-																			<div class="col-md-4">
-																				<label for="budget">Budget
-																						<input type="text" id="budget" class="form-control">
-																				</label>
-																			</div>
-																			<div class="col-md-4">
-																				<label for="taux_tantieme">Taux tantieme
-																						<input type="text" id="taux_tantieme" class="form-control">
-																				</label>
-																			</div>
-																			<div class="col-md-4">
-																				<label for="totale_tantieme">Totale tantieme
-																						<input type="text" id="totale_tantieme" class="form-control">
-																				</label>
-																			</div>
-																</form>
+                                Valeurs Valeurs Valeurs Valeurs Valeurs Valeurs Valeurs Valeurs  
                               </td>
                           </tr>
                           <tr class="oddeven">
@@ -152,7 +115,7 @@ include '../header.php';
             <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <div class="tabBar tabBarWithBottom">
                         <div style="float: left; margin-right: 20px;">
-                          <img class="img-responsive" src="../img/syndic_about.png">
+                          <img src="../img/syndic_about.png">
                         </div>
                         <a href="http://www.marocgeek.com/" target="_blank"><b>MG-Syndic</b></a> : Une soulution de gestion des locatives
                         <br>
@@ -169,11 +132,10 @@ include '../header.php';
 
 
 <script>
-var setupApp     = angular.module('setupApp', ['ngSanitize','ngRoute']) ;
-var setupCtrl    = setupApp.controller('setupCtrl', ['$scope','$http', func_setupCtrl]);
+var singleApp     = angular.module('singleApp', ['ngSanitize','ngRoute']) ;
+var singleCtrl    = singleApp.controller('singleCtrl', ['$scope','$http', func_singleCtrl]);
 
-function func_setupCtrl ($scope,$http,$location) {
-   $scope.adev = "1" ;
-	$scope.isStatic = "1" ;
+function func_singleCtrl ($scope,$http,$location) {
+   
 }
 </script>

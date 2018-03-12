@@ -1,32 +1,14 @@
-$('#btn_test').click(function(){
-	
-	 if ( this.options.clearbtn ) {
-            this.structure.$clear.off().on('click', function (e) {
-                $select.clear(e);
-            });
-        }
-	//alert('affecte');
-	//$('#sel1 option[value=2]').attr('selected','selected');
-// 	$("#ul_appartement>li.selected").removeClass("selected");
-// 	$("#ul_appartement>li[data-value=3]").addClass("selected");
-	
-// 	//Placeholder
-// 	$('#num_appartement .placeholder').addClass("text");
-// 	$('#num_appartement .placeholder').removeClass("placeholder");
-	
-// 	//Get Selected value
-// 	selectedVal = $("#ul_appartement>li.selected").text() ;
-// 	$('#num_appartement .text').text(selectedVal);
-	//$('#num_appartement .placeholder').text(selectedVal);
-});
 /*
  ***********************************************************************************
  *                                      INTERFACE MAJ
  ***********************************************************************************
  */
+//Init Date Paiement
+  $( "#date_paiement" ).datepicker();
+	$( "#date_recu" ).datepicker();
 
-// Populate Combo Appartement
-
+// Populate Combo propriete
+if(window.location.pathname == '/htdocs/syndic/paiement/maj.php'){
 //Get url param
 		 var the_id ;
 			$.urlParam = function(name){
@@ -45,29 +27,29 @@ $('#btn_test').click(function(){
 					contentType	: "application/json",
 				  dataType		: "json",
 					url     		: ajaxUrl,
-					data    		: JSON.stringify({action:"fetch_combo_appartement"}),
+					data    		: JSON.stringify({action:"fetch_combo_propriete"}),
 					success 		: function(data) {
-																				console.log('Populate combo appartement');
+																				console.log('Populate combo propriete');
 																				console.log(data);
-																				var appart="",isSelescted ;
+																				var propriete="",isSelected="" ;
 						
 																				data.forEach(function(element) {
 																					
-																					//if ID paiement in url identic with Id paiement affected on this appartement
-																					if(element.id_paiement == the_id ) isSelected = 'selected' ;
-																					else 															 isSelected = '' ;
+																					//Selected row in drop downliste
+																					if(the_id){
+																								isSelected = (element.id_paiement == the_id) ? 'selected' : '' ; //if ID in url identic with Curr Id
+																					}
 																					
-																					appart += '<li class="filter-item items '+isSelected+'" data-filter="'+element.num_appartement+' - '+element.nom+' - '+element.prenom+'" data-value="'+element.id+'">'+element.num_appartement+'</li>';
+																					propriete += '<li class="filter-item items '+isSelected+'" data-filter="'+element.num_propriete+' - '+element.nom+' - '+element.prenom+'" data-value="'+element.id+'">'+element.num_propriete+'</li>';
 																				});
-																				$('#ul_appartement').append(appart);
+																				$('#ul_propriete').append(propriete);
 																			 },
 					error				: function(data){
 																		console.log('Error : ');
 																		console.log(data);
 																	}
     });
-$( "#ul_appartement .selected" ).val(15);
-
+}
 //AngularJS
 var majApp     = angular.module('majApp', []) ;
 var majCtrl    = majApp.controller('majCtrl', ['$scope','$http', func_majCtrl]);
@@ -100,11 +82,15 @@ function func_majCtrl ($scope,$http) {
         req.then(function mySuccess(response) {
                 console.log('Succes get data');
                 console.log(response);
+					
+								//Set Current DatePicker
+								$( "#date_paiement" ).datepicker( "setDate", response.data[0].date_paiement );
+								$( "#date_recu" ).datepicker( "setDate", response.data[0].date_recu );
                 $scope.num_paiement            = response.data[0].num_paiement;
-                $scope.date_paiement           = response.data[0].date_paiement;
                 $scope.mode_paiement           = response.data[0].mode_paiement;
                 $scope.affectation_paiement    = response.data[0].affectation_paiement;
                 $scope.montant_paiement        = response.data[0].montant_paiement;
+								$scope.charge_recu        		 = response.data[0].charge_recu;
             },
             function myError(response) {
                 console.log('Error get data');
@@ -125,12 +111,15 @@ function func_majCtrl ($scope,$http) {
                 data: {
                     action                  : "update",
                     id                      : the_id,
-										fk_appartement 				  : $( "#ul_appartement .selected" ).attr( "data-value" ) ,
+										fk_propriete 				  : $( "#ul_propriete .selected" ).attr( "data-value" ) ,
                     num_paiement            : $scope.num_paiement,
-                    date_paiement           : $scope.date_paiement,
+                    date_paiement           : $( "#date_paiement" ).val(),
                     mode_paiement           : $scope.mode_paiement,
                     affectation_paiement    : $scope.affectation_paiement,
-                    montant_paiement        : $scope.montant_paiement
+                    montant_paiement        : $scope.montant_paiement,
+									  date_recu          		  : $( "#date_recu" ).val(),
+										charge_recu        			: $scope.charge_recu
+
                 }
             });
             req.then(function mySuccess(response) {
@@ -151,12 +140,14 @@ function func_majCtrl ($scope,$http) {
                 url: ajaxUrl,
                 data: {
                     action  						 : "create",
-										fk_appartement 			 : $( "#ul_appartement .selected" ).attr( "data-value" ) ,
+										fk_propriete 			 : $( "#ul_propriete .selected" ).attr( "data-value" ) ,
                     num_paiement         : $scope.num_paiement,
-                    date_paiement        : $scope.date_paiement,
+                    date_paiement        : $( "#date_paiement" ).val(),
                     mode_paiement        : $scope.mode_paiement,
                     affectation_paiement : $scope.affectation_paiement,
-                    montant_paiement     : $scope.montant_paiement
+                    montant_paiement     : $scope.montant_paiement,
+									 	date_recu          	 : $( "#date_recu" ).val(),
+										charge_recu        	 : $scope.charge_recu
                 }
             });
             req.then(function mySuccess(response) {
@@ -205,7 +196,9 @@ $("#table_paiement").tabulator({
         {title:"Mode paiement", field:"mode_paiement", headerFilter:true},
         {title:"Affectation paiement", field:"affectation_paiement", headerFilter:true},
         {title:"Montant paiement", field:"montant_paiement", headerFilter:true},
-				{title:"Num Appart.", field:"num_appartement", headerFilter:true},
+				{title:"Num propriete", field:"num_propriete", headerFilter:true},
+				{title:"Date reçus", field:"date_recu", headerFilter:true},
+				{title:"Charge recus.", field:"charge_recu", headerFilter:true},
         {title:"<input id='check-all' type='checkbox' ng-click='select_all_func()' />",
             field:"sup",
             formatter:"tickCross",
@@ -251,6 +244,8 @@ function func_listeCtrl ($scope,$http) {
         req.then(function mySuccess(response) {
                 var tabledata = response.data;
                 //load data into the table
+								console.log('Success load data into table');
+							  console.log(response);
                 $("#table_paiement").tabulator("setData", tabledata);
             },
             function myError(response) {
@@ -397,6 +392,9 @@ function func_singleCtrl ($scope,$http,$location) {
                     $scope.mode_paiement           = response.data[0].mode_paiement;
                     $scope.affectation_paiement    = response.data[0].affectation_paiement;
                     $scope.montant_paiement        = response.data[0].montant_paiement;
+										$scope.num_propriete       	 = response.data[0].num_propriete;
+										$scope.date_recu        			 = response.data[0].date_recu;
+										$scope.charge_recu        	   = response.data[0].charge_recu;
                 },
                 function myError(response) {
                     console.log('Error get data');

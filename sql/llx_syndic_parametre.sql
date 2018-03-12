@@ -1,5 +1,5 @@
 -- ============================================================================
--- Copyright (C) 2016-2017	Abdelhadi & Mustapha	 <contact@marocgeek.com>
+-- Copyright (C) 2016-2017	Alexandre Spangaro	 <aspangaro@zendsi.com>
 --
 -- This program is free software; you can redistribute it and/or modify
 -- it under the terms of the GNU General Public License as published by
@@ -14,16 +14,16 @@
 -- You should have received a copy of the GNU General Public License
 -- along with this program. If not, see <http://www.gnu.org/licenses/>.
 --
--- Table of llx_syndic_appartement
+-- Table of llx_syndic_parametre
 -- ============================================================================
 
-create table llx_syndic_appartement
+create table llx_syndic_parametre
 (
-  rowid                      integer AUTO_INCREMENT PRIMARY KEY,
-  fk_residence               integer ,
-  num_appartement            varchar(200),
-  num_titre                  varchar(200),
-  quote_part_terrain         varchar(200),
-  surface                    int,
-  pt_indivision              int
+  rowid                           integer AUTO_INCREMENT PRIMARY KEY,
+  budget                          float,
+  taux_tantieme                   float,
+  totale_tantieme                 float,
+  is_penalite_static              bool,
+  penalite_static_frais           float,
+  penalite_dynamic_taux           float
 )ENGINE=innodb;

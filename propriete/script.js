@@ -5,7 +5,7 @@
  */
 
 // Populate Combo propriete
-if(window.location.pathname == '/htdocs/syndic/proprietaire/maj.php'){
+if(window.location.pathname == '/htdocs/syndic/propriete/maj.php'){
 //Get url param
 		 var the_id ;
 			$.urlParam = function(name){
@@ -17,29 +17,27 @@ if(window.location.pathname == '/htdocs/syndic/proprietaire/maj.php'){
 			}
 			the_id = $.urlParam('id');
 
-	var ajaxUrl = window.location.origin+"/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php" ;
+	var ajaxUrl = window.location.origin+"/htdocs/syndic/propriete/class/proprieteHandler.class.php" ;
   $.ajax({
 					async   		: false,
 					method  		: 'POST',
 					contentType	: "application/json",
 				  dataType		: "json",
 					url     		: ajaxUrl,
-					data    		: JSON.stringify({action:"fetch_combo_propriete"}),
+					data    		: JSON.stringify({action:"fetch_combo_residence"}),
 					success 		: function(data) {
-																				console.log('Populate combo propriete');
+																				console.log('Populate combo residence');
 																				console.log(data);
-																				var propriete = '';
-																				var isSelected = '' ;
+																				var propriete="",isSelected="" ;
 						
 																				data.forEach(function(element) {
-																					//Selected row in drop downliste
-																					if(the_id){
-																								isSelected = (element.id_proprietaire == the_id) ? 'selected' : '' ; //if ID in url identic with Curr Id
-																					}
-																					propriete += '<li class="filter-item items '+isSelected+'" data-filter="'+element.num_propriete+' - '+element.num_titre+'" data-value="'+element.id+'">'+element.num_propriete+'</li>';
+																							//Selected row in drop downliste
+																							if(the_id){
+																										isSelected = (element.id_propriete == the_id) ? 'selected' : '' ; //if ID in url identic with Curr Id
+																							}
+																							propriete += '<li class="filter-item items '+isSelected+'" data-filter="'+element.nom+' - '+element.num_residence+' - '+element.ville+'" data-value="'+element.id+'">'+element.nom+'</li>';
 																				});
-						
-																				$('#ul_propriete').append(propriete);
+																				$('#ul_residence').append(propriete);
 																			 },
 					error				: function(data){
 																		console.log('Error : ');
@@ -47,6 +45,7 @@ if(window.location.pathname == '/htdocs/syndic/proprietaire/maj.php'){
 																	}
     });
 }
+
 //AngularJS
 var majApp     = angular.module('majApp', []) ;
 var majCtrl  = majApp.controller('majCtrl', ['$scope','$http', func_majCtrl]);
@@ -54,7 +53,7 @@ var majCtrl  = majApp.controller('majCtrl', ['$scope','$http', func_majCtrl]);
 function func_majCtrl ($scope,$http) {
 
     //Default
-    $scope.titre_page = 'Nouveau proprietaire' ;
+    $scope.titre_page = 'Nouveau propriete' ;
 
     //Check if id exist in url
     //If exist populae form else let them empty
@@ -69,8 +68,8 @@ function func_majCtrl ($scope,$http) {
     the_id = $.urlParam('id');
     if(the_id != null)
     {
-        $scope.titre_page = 'Modifier proprietaire' ;
-        var ajaxUrl = window.location.origin+"/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php" ;
+        $scope.titre_page = 'Modifier propriete' ;
+        var ajaxUrl = window.location.origin+"/htdocs/syndic/propriete/class/proprieteHandler.class.php" ;
         var req = $http({
             method  :   'POST',
             url     :   ajaxUrl,
@@ -79,16 +78,11 @@ function func_majCtrl ($scope,$http) {
         req.then(function mySuccess(response) {
                 console.log('Succes get data');
                 console.log(response);
-                $scope.nom          = response.data[0].nom;
-                $scope.prenom       = response.data[0].prenom;
-                $scope.titre        = response.data[0].titre;
-                $scope.civilite     = response.data[0].civilite;
-                $scope.adresse_1    = response.data[0].adresse_1;
-                $scope.adresse_2    = response.data[0].adresse_2;
-                $scope.email_1      = response.data[0].email_1;
-                $scope.email_2      = response.data[0].email_2;
-                $scope.tel_1        = response.data[0].tel_1;
-                $scope.tel_2        = response.data[0].tel_2;
+                $scope.num_propriete      = response.data[0].num_propriete;
+                $scope.num_titre            = response.data[0].num_titre;
+                $scope.quote_part_terrain   = response.data[0].quote_part_terrain;
+                $scope.surface              = response.data[0].surface;
+                $scope.pt_indivision        = response.data[0].pt_indivision;
             },
             function myError(response) {
                 console.log('Error get data');
@@ -102,26 +96,20 @@ function func_majCtrl ($scope,$http) {
         // Id populated in url
         // Update/Edition
         if (the_id != null) {
-            var ajaxUrl = window.location.origin + "/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php";
+            var ajaxUrl = window.location.origin + "/htdocs/syndic/propriete/class/proprieteHandler.class.php";
             var req = $http({
                 method: 'POST',
                 url: ajaxUrl,
                 data: {
-                    action      		: "update",
-                    id          		: the_id,
-                    nom         		: $scope.nom,
-                    prenom      		: $scope.prenom,
-                    titre       		: $scope.titre,
-                    civilite    		: $scope.civilite,
-                    ville       		: $scope.ville,
-                    adresse_1   		: $scope.adresse_1,
-                    adresse_2   		: $scope.adresse_2,
-                    email_1     		: $scope.email_1,
-                    email_2     		: $scope.email_2,
-                    tel_1       		: $scope.tel_1 ,
-                    tel_2       		: $scope.tel_2,
-										fk_propriete 	: $( "#ul_propriete .selected" ).attr( "data-value" )
-                }
+                        action              : "update",
+                        id                  : the_id,
+												fk_residence				: $( "#ul_residence .selected" ).attr( "data-value" ) ,
+                        num_propriete     : $scope.num_propriete,
+                        num_titre           : $scope.num_titre,
+                        quote_part_terrain  : $scope.quote_part_terrain,
+                        surface             : $scope.surface,
+                        pt_indivision       : $scope.pt_indivision
+                      }
             });
             req.then(function mySuccess(response) {
                     console.log('Success Valide update data');
@@ -135,28 +123,22 @@ function func_majCtrl ($scope,$http) {
         else{
             //Id empty in url
             //Insert/Creation
-            var ajaxUrl = window.location.origin + "/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php";
+            var ajaxUrl = window.location.origin + "/htdocs/syndic/propriete/class/proprieteHandler.class.php";
             var req = $http({
                 method: 'POST',
                 url: ajaxUrl,
                 data: {
-                    action      		: "create",
-                    nom         		: $scope.nom,
-                    prenom      		: $scope.prenom,
-                    titre       		: $scope.titre,
-                    civilite    		: $scope.civilite,
-                    ville       		: $scope.ville,
-                    adresse_1   		: $scope.adresse_1,
-                    adresse_2   		: $scope.adresse_2,
-                    email_1    			: $scope.email_1,
-                    email_2     		: $scope.email_2,
-                    tel_1       		: $scope.tel_1 ,
-                    tel_2       		: $scope.tel_2,
-										fk_propriete 	: $( "#ul_propriete .selected" ).attr( "data-value" )
+                    action: "create",
+										fk_residence				: $( "#ul_residence .selected" ).attr( "data-value" ) ,
+                    num_propriete     : $scope.num_propriete,
+                    num_titre           : $scope.num_titre,
+                    quote_part_terrain  : $scope.quote_part_terrain,
+                    surface             : $scope.surface,
+                    pt_indivision       : $scope.pt_indivision
                 }
             });
             req.then(function mySuccess(response) {
-                    console.log('Success Valide insert data');
+                    console.log('Success Valide data');
                     console.log(response);
                 },
                 function myError(response) {
@@ -175,7 +157,7 @@ function func_majCtrl ($scope,$http) {
 /*******************
  * Init Table
  ********************/
-$("#table_proprietaire").tabulator({
+$("#table_propriete").tabulator({
     pagination:"local", //enable local pagination.
     paginationSize:20, //Number of rows
     layout:"fitColumns", //fit columns to width of table (optional)
@@ -190,25 +172,17 @@ $("#table_proprietaire").tabulator({
                                     "prev_title": "Précédent Page",
                                     "next": "Prochain",
                                     "next_title": "Prochain Page"
-                                    },
-								"headerFilters":{
-																		"default":"Filtrer", //default header filter placeholder text
-																}
+                                    }
         }
     },
+
     columns:[ //Define Table Columns
-        {title:"Nom", field:"nom", headerFilter:true},
-        {title:"Prenom", field:"prenom", headerFilter:true},
-        {title:"Titre", field:"titre", headerFilter:true},
-        {title:"Civilite", field:"civilite", headerFilter:true},
-        {title:"Ville", field:"ville", headerFilter:true},
-        {title:"Adresse 1", field:"adresse_1", headerFilter:true},
-        {title:"Adresse 2", field:"adresse_2", headerFilter:true},
-        {title:"Email 1", field:"email_1", headerFilter:true},
-        {title:"Email 2", field:"email_2", headerFilter:true},
-        {title:"Tel 1", field:"tel_1", headerFilter:true},
-        {title:"Tel 2", field:"tel_2", headerFilter:true},
-				{title:"Propriete", field:"num_propriete", headerFilter:true},
+        {title:"Num propriete", field:"num_propriete", headerFilter:true},
+        {title:"Num titre", field:"num_titre", headerFilter:true},
+        {title:"Quote par terrain", field:"quote_part_terrain", headerFilter:true},
+        {title:"Surface", field:"surface", headerFilter:true},
+        {title:"Pt indivision", field:"pt_indivision", headerFilter:true},
+				{title:"Nom residence", field:"nom_residence", headerFilter:true},
         {title:"<input id='check-all' type='checkbox' ng-click='select_all_func()' />",
             field:"sup",
             formatter:"tickCross",
@@ -230,7 +204,7 @@ $("#table_proprietaire").tabulator({
     }
 });
 //set tabulator to french
-$("#table_proprietaire").tabulator("setLocale", "fr-fr");
+$("#table_propriete").tabulator("setLocale", "fr-fr");
 
 
 /****************************
@@ -245,7 +219,7 @@ function func_listeCtrl ($scope,$http) {
      * On load Fill table
      ***************************/
     function load() {
-        var ajaxUrl = window.location.origin + "/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php";
+        var ajaxUrl = window.location.origin + "/htdocs/syndic/propriete/class/proprieteHandler.class.php";
         var req = $http({
             method: 'POST',
             url: ajaxUrl,
@@ -253,10 +227,10 @@ function func_listeCtrl ($scope,$http) {
         });
         req.then(function mySuccess(response) {
                 var tabledata = response.data;
-                console.log('Success load data into table');
-                console.log(response);
+                console.log('propriete Adev Data');
+                console.log(tabledata);
                 //load data into the table
-                $("#table_proprietaire").tabulator("setData", tabledata);
+                $("#table_propriete").tabulator("setData", tabledata);
             },
             function myError(response) {
                 console.log('Fail load data into table');
@@ -269,7 +243,7 @@ function func_listeCtrl ($scope,$http) {
      * Search btn
      ***************************/
     $scope.search_func = function () {
-        var ajaxUrl = window.location.origin + "/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php";
+        var ajaxUrl = window.location.origin + "/htdocs/syndic/propriete/class/proprieteHandler.class.php";
         var req = $http({
             method: 'POST',
             url: ajaxUrl,
@@ -278,7 +252,7 @@ function func_listeCtrl ($scope,$http) {
         req.then(function mySuccess(response) {
                 var tabledata = response.data;
                 //load sample data into the table
-                $("#table_proprietaire").tabulator("setData", tabledata);
+                $("#table_propriete").tabulator("setData", tabledata);
             },
             function myError(response) {
                 console.log('Error Search btn');
@@ -294,14 +268,14 @@ function func_listeCtrl ($scope,$http) {
 
         $scope.confirm = "Suppression Encours ...";
         var listChecked = [];
-        var listAll = $("#table_proprietaire").tabulator("getData");
+        var listAll = $("#table_propriete").tabulator("getData");
         angular.forEach(listAll, function (value, key) {
             if (value.sup === false) {
                 listChecked.push(value.id);
             }
         });
 
-        var ajaxUrl = window.location.origin + "/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php";
+        var ajaxUrl = window.location.origin + "/htdocs/syndic/propriete/class/proprieteHandler.class.php";
         var req = $http({
             method: 'POST',
             url: ajaxUrl,
@@ -311,7 +285,7 @@ function func_listeCtrl ($scope,$http) {
                 console.log('Succes Delete : ' + response.data);
                 //Loop Remove deleted rows front-end
                 angular.forEach(listChecked, function (value, key) {
-                    $("#table_proprietaire").tabulator("deleteRow", value);
+                    $("#table_propriete").tabulator("deleteRow", value);
                 });
                 $scope.select_action = '0' ;
                 $scope.confirm = "Confirmer";
@@ -326,14 +300,17 @@ function func_listeCtrl ($scope,$http) {
      ***************************/
     $scope.select_all_func = function () {
         var dataUpdate = [];
-        var productData = $("#table_proprietaire").tabulator("getData");
+        var productData = $("#table_propriete").tabulator("getData");
 
         if ($('#check-all').prop("checked")) {
             $.each(productData, function (i, item) {
                 var obj = {
-                    "id": item.id,
-                    "nom": item.nom,
-                    "prenom": item.prenom,
+                    "id"                  : item.id,
+                    "num_propriete"     : item.num_propriete,
+                    "num_titre"           : item.num_titre,
+                    "quote_part_terrain"  : item.quote_part_terrain,
+                    "surface"             : item.surface,
+                    "pt_indivision"       : item.pt_indivision,
                     "sup": false
                 };
                 dataUpdate.push(obj);
@@ -343,14 +320,17 @@ function func_listeCtrl ($scope,$http) {
             $.each(productData, function (i, item) {
                 var obj = {
                     "id": item.id,
-                    "nom": item.nom,
-                    "prenom": item.prenom,
+                    "num_propriete"     : item.num_propriete,
+                    "num_titre"           : item.num_titre,
+                    "quote_part_terrain"  : item.quote_part_terrain,
+                    "surface"             : item.surface,
+                    "pt_indivision"       : item.pt_indivision,
                     "sup": true
                 };
                 dataUpdate.push(obj);
             });
         }
-        $("#table_proprietaire").tabulator("updateData", dataUpdate);
+        $("#table_propriete").tabulator("updateData", dataUpdate);
     };
 }
 
@@ -384,8 +364,9 @@ function func_singleCtrl ($scope,$http,$location) {
 
         if(the_id != null)
         {
-            $scope.titre_page = 'Modifier proprietaire' ;
-            var ajaxUrl = window.location.origin+"/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php" ;
+            $scope.titre_page = 'Modifier propriete' ;
+            $scope.titre_page = 'Modifier propriete' ;
+            var ajaxUrl = window.location.origin+"/htdocs/syndic/propriete/class/proprieteHandler.class.php" ;
             var req = $http({
                 method  :   'POST',
                 url     :   ajaxUrl,
@@ -394,19 +375,13 @@ function func_singleCtrl ($scope,$http,$location) {
             req.then(function mySuccess(response) {
                     console.log('Succes get data');
                     console.log(response);
-                    $scope.id           		= response.data[0].id;
-                    $scope.nom          		= response.data[0].nom;
-                    $scope.prenom       		= response.data[0].prenom;
-                    $scope.titre        		= response.data[0].titre;
-                    $scope.civilite     		= response.data[0].civilite;
-                    $scope.ville        		= response.data[0].ville;
-                    $scope.adresse_1    		= response.data[0].adresse_1;
-                    $scope.adresse_2    		= response.data[0].adresse_2;
-                    $scope.email_1      		= response.data[0].email_1;
-                    $scope.email_2     		  = response.data[0].email_2;
-                    $scope.tel_1        		= response.data[0].tel_1;
-                    $scope.tel_2        		= response.data[0].tel_2;
-										$scope.num_propriete  = response.data[0].num_propriete;
+                    $scope.id                   = response.data[0].id;
+                    $scope.num_propriete      = response.data[0].num_propriete;
+                    $scope.num_titre            = response.data[0].num_titre;
+                    $scope.quote_part_terrain   = response.data[0].quote_part_terrain;
+                    $scope.surface              = response.data[0].surface;
+                    $scope.pt_indivision        = response.data[0].pt_indivision;
+										$scope.nom_residence        = response.data[0].nom_residence;
                 },
                 function myError(response) {
                     console.log('Error get data');
@@ -418,7 +393,7 @@ function func_singleCtrl ($scope,$http,$location) {
         /***************************************************************************
          * Pagination
          *************************************************************************/
-        var ajaxUrl = window.location.origin+"/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php" ;
+        var ajaxUrl = window.location.origin+"/htdocs/syndic/propriete/class/proprieteHandler.class.php" ;
         var req = $http({
             method  :   'POST',
             url     :   ajaxUrl,
@@ -479,7 +454,7 @@ function func_singleCtrl ($scope,$http,$location) {
         id = $scope.id ;
 
       // Ajax Request for delete this Row
-        var ajaxUrl = window.location.origin + "/htdocs/syndic/proprietaire/class/proprietaireHandler.class.php";
+        var ajaxUrl = window.location.origin + "/htdocs/syndic/propriete/class/proprieteHandler.class.php";
         var req = $http({
             method: 'POST',
             url: ajaxUrl,

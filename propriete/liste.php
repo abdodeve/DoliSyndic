@@ -13,7 +13,7 @@
  */
 
 require '../../main.inc.php';
-llxHeader('',$title='Liste des proprietaires');
+llxHeader('',$title='Liste des proprietes');
 include '../header.php';
 ?>
 
@@ -29,7 +29,7 @@ include '../header.php';
 					<img src="../img/owner-icon.png" alt="" title="" class="valignmiddle" id="pictotitle">
 				</td>
 				<td class="nobordernopadding valignmiddle" valign="middle">
-						<div class="titre">Liste proprietaires</div>
+						<div class="titre">Liste proprietes</div>
 				</td>
 				<td class="nobordernopadding center valignmiddle">
 				<div class="centpercent center delete_block">
@@ -63,9 +63,8 @@ include '../header.php';
   </div>
 </div>
 
-    <div id="test_table" style="width: 98%"></div>
 	<div class="div-table-responsive">
-					<div id="table_proprietaire" style="width: 98%"></div>
+					<div id="table_propriete" style="width: 98%"></div>
 	</div>
 </div>
 </div>

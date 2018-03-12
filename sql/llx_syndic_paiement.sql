@@ -20,7 +20,7 @@
 create table llx_syndic_paiement
 (
   rowid                 integer AUTO_INCREMENT PRIMARY KEY,
-  fk_appartement        integer ,
+  fk_propriete        integer ,
   num_paiement          integer ,
   date_paiement         date,
   mode_paiement         varchar(200),

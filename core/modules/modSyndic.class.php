@@ -19,7 +19,7 @@
  * 	\defgroup   listexportimport     Module ListExportImport
  *  \brief      Example of a module descriptor.
  *				Such a file must be copied into htdocs/listexportimport/core/modules directory.
- *  \file       htdocs/listexportimport/core/modules/modListExportImport.class.php
+ *  \file       htdocs/listexportimport/core/modusles/modListExportImport.class.php
  *  \ingroup    listexportimport
  *  \brief      Description and activation file for module ListExportImport
  */
@@ -72,15 +72,16 @@ class modSyndic extends DolibarrModules
 		// for specific path of parts (eg: /listexportimport/core/modules/barcode)
 		// for specific css file (eg: /listexportimport/css/listexportimport.css.php)
 		$this->module_parts = array(
-                                            'js' => array(  'syndic/js/tabulator.min.js',
-                                                            'syndic/js/angular.min.js',
-                                                            'syndic/js/angular-sanitize.js',
-                                                            'syndic/js/angular-route.js',
-                                                            'syndic/js/popper.min.js',
-                                                            'syndic/js/bootstrap.min.js'
+                                            'js' => array(  'syndic/js/script.js',
+// 																														'syndic/js/tabulator.min.js',
+//                                                             'syndic/js/angular.min.js',
+//                                                             'syndic/js/angular-sanitize.js',
+//                                                             'syndic/js/angular-route.js',
+//                                                             'syndic/js/popper.min.js',
+//                                                             'syndic/js/bootstrap.min.js'
                                                           ),
                                             'css' => array('syndic/css/style.css',
-                                                            'syndic/css/tabulator.min.css'
+//                                                             'syndic/css/tabulator.min.css'
                                                            ),
                                             'hooks' => array('toprightmenu')
 					);
@@ -237,15 +238,15 @@ class modSyndic extends DolibarrModules
         $r++;
      /*
      ***************************
-     *  Appartement
+     *  Propriete
      ***************************
      */
-        // Menu Appartement
+        // Menu propriete
         $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
             'type'=>'left',			// This is a Left menu entry
-            'titre'=>'Appartement',
+            'titre'=>'Propriete',
             'mainmenu'=>'syndic',
-            'leftmenu'=>'appartement',
+            'leftmenu'=>'propriete',
             'url'=>'/syndic/index.php',
             'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
             'position'=>104,
@@ -255,13 +256,13 @@ class modSyndic extends DolibarrModules
             'user'=>2);
         $r++;
 
-        // Nouveau Appartement - Submenu Appartement
-        $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic,fk_leftmenu=appartement',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
+        // Nouveau propriete - Submenu propriete
+        $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic,fk_leftmenu=propriete',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
             'type'=>'left',			// This is a Left menu entry
-            'titre'=>'Nouveau appartement',
+            'titre'=>'Nouveau propriete',
             'mainmenu'=>'syndic',
             'leftmenu'=>'nvappart',
-            'url'=>'/syndic/appartement/maj.php',
+            'url'=>'/syndic/propriete/maj.php',
             'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
             'position'=>105,
             'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.
@@ -271,13 +272,13 @@ class modSyndic extends DolibarrModules
 
          $r++;
 
-        // Liste Appartement - Submenu Appartement
-        $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic,fk_leftmenu=appartement',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
+        // Liste propriete - Submenu propriete
+        $this->menu[$r]=array(	'fk_menu'=>'fk_mainmenu=syndic,fk_leftmenu=propriete',	// Use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode of parent menu
             'type'=>'left',			// This is a Left menu entry
-            'titre'=>'Liste appartement',
+            'titre'=>'Liste propriete',
             'mainmenu'=>'syndic',
-            'leftmenu'=>'list_appartement',
-            'url'=>'/syndic/appartement/liste.php',
+            'leftmenu'=>'list_propriete',
+            'url'=>'/syndic/propriete/liste.php',
             'langs'=>'mylangfile',	// Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
             'position'=>106,
             'enabled'=>'1',			// Define condition to show or hide menu entry. Use '$conf->monmodule->enabled' if entry must be visible if module is enabled.

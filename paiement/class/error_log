@@ -7,3 +7,4 @@
 [09-Jan-2018 16:56:27 America/Chicago] PHP Parse error:  syntax error, unexpected ')', expecting ';' or '{' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/paiement/class/paiement.class.php on line 307
 [09-Jan-2018 16:56:47 America/Chicago] PHP Parse error:  syntax error, unexpected ')', expecting ';' or '{' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/paiement/class/paiement.class.php on line 307
 [09-Jan-2018 16:57:21 America/Chicago] PHP Parse error:  syntax error, unexpected ')', expecting ';' or '{' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/paiement/class/paiement.class.php on line 307
+[11-Jan-2018 17:19:23 America/Chicago] PHP Parse error:  syntax error, unexpected ''date_recu'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/marocgee/public_html/gestion-tva/htdocs/syndic/paiement/class/paiement.class.php on line 157

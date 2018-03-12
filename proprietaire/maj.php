@@ -13,9 +13,15 @@
  */
 
 require '../../main.inc.php';
-require_once DOL_DOCUMENT_ROOT.'/core/class/html.formfile.class.php';
+//require_once DOL_DOCUMENT_ROOT.'/core/class/html.formfile.class.php';
 
-llxHeader();
+?>
+<!-- 		Includ BootStrap.CSS -->
+    <link rel="stylesheet" type="text/css" href="/htdocs/syndic/css/bootstrap-3.0.2.min.css">
+<?php
+
+llxHeader('',$title='Mise à jour proprietaire');
+include '../header.php';
 ?>
 
 <div ng-app="majApp" ng-cloak>
@@ -45,7 +51,12 @@ llxHeader();
 		</tr>
 		<tr>
 			<td>Titre</td>
-			<td><input name="titre" size="40" value="" ng-model="titre"></td>
+<!-- 			<td><input name="titre" size="40" value="" ng-model="titre"></td> -->
+			<td>
+				<label><input type="radio" ng-model="titre" value="mr"> Mr</label>
+				<label><input type="radio" ng-model="titre" value="mme"> Mme</label>
+				<label><input type="radio" ng-model="titre" value="mlle"> Mlle</label>
+			</td>
 		</tr>
 		<tr>
 			<td>Civilite</td>
@@ -79,6 +90,47 @@ llxHeader();
             <td>Tel 2</td>
             <td><input name="tel_2" size="40" value="" ng-model="tel_2"></td>
         </tr>
+				<tr>
+						<td>Propriete</td>
+						<td>
+											<div class="col-sm-4" style="padding:0;">
+												 <div id="num_propriete" class="selectpicker" data-clear="true" data-live="true">
+																					<a href="#" class="clear"><span class="fa fa-times"></span><span class="sr-only">Annuler la sélection</span></a>
+																					<button data-id="prov" type="button" class="btn btn-md btn-block btn-default dropdown-toggle">
+																							<span class="placeholder">Choisis une option</span>
+																							<span class="caret"></span>
+																					</button>
+																					<div class="dropdown-menu">
+																							<div class="live-filtering" data-clear="true" data-autocomplete="true" data-keys="true">
+																									<label class="sr-only" for="input-bts-ex-5">Chercher dans la list</label>
+																									<div class="search-box">
+																											<div class="input-group">
+																													<span class="input-group-addon" id="search-icon5">
+																															<span class="fa fa-search"></span>
+																														<a href="#" class="filter-clear"><span><i class="fa fa-times" aria-hidden="true"></i> Supp. filtre</span></a>
+																													</span>
+																													<input type="text" placeholder="Chercher dans la liste" id="input-bts-ex-5" class="form-control live-search" aria-describedby="search-icon5" tabindex="1" />
+																											</div>
+																									</div>
+																									<div class="list-to-filter">
+																											<ul class="list-unstyled">
+																													<li class="optgroup">
+																															<ul class="list-unstyled" id="ul_proprietaire">
+																															</ul>
+																													</li>
+																											</ul>
+																											<div class="no-search-results">
+																													<div class="alert alert-warning" role="alert"><i class="fa fa-warning margin-right-sm"></i>Aucune resultat <strong>'<span></span>'</strong> est trouvé.</div>
+																											</div>
+																									</div>
+																							</div>
+																					</div>
+																					<input type="hidden" name="bts-ex-5" value="">
+																			</div>
+																	</div>
+
+						</td>
+			</tr>
 		</table>
 	</div>
 		<div class="center">
@@ -92,5 +144,8 @@ llxHeader();
 llxFooter();
 ?>
 <script src="script.js"></script>
+<script src="/htdocs/syndic/js/tabcomplete.min.js"></script>
+<script src="/htdocs/syndic/js/livefilter.min.js"></script>
+<script src="/htdocs/syndic/js/bootstrap-select.js"></script>
 <?php
 $db->close();

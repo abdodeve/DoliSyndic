@@ -13,9 +13,13 @@
  */
 
 require '../../main.inc.php';
-require_once DOL_DOCUMENT_ROOT.'/core/class/html.formfile.class.php';
+?>
+    <link rel="stylesheet" type="text/css" href="/htdocs/syndic/css/bootstrap-3.0.2.min.css">
 
-llxHeader();
+<?php
+
+llxHeader('',$title='Mise à jour residence');
+include '../header.php';
 ?>
 
 <div ng-app="majApp" ng-cloak>

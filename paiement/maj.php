@@ -18,7 +18,8 @@ require_once DOL_DOCUMENT_ROOT.'/core/class/html.formfile.class.php';
     <link rel="stylesheet" type="text/css" href="/htdocs/syndic/css/bootstrap-3.0.2.min.css">
 
 <?php
-llxHeader();
+llxHeader('',$title='Mise à jour paiement');
+include '../header.php';
 ?>
 
 <div ng-app="majApp" ng-cloak>
@@ -40,29 +41,29 @@ llxHeader();
 		<table class="border" width="100%">
 		<tr>
 			<td class="titlefieldcreate">Num paiement</td>
-			<td><input name="nom" size="40" value="" ng-model="num_paiement"></td>
+			<td><input name="num_paiement" size="40" value="" ng-model="num_paiement"></td>
 		</tr>
 		<tr>
 			<td>Date paiement</td>
-            <td><input name="prenom" size="40" value="" ng-model="date_paiement"></td>
+      <td><input name="date_paiement" id="date_paiement" size="40" value="" ng-model="date_paiement"></td>
 		</tr>
 		<tr>
 			<td>Mode paiement</td>
-			<td><input name="titre" size="40" value="" ng-model="mode_paiement"></td>
+			<td><input name="mode_paiement" size="40" value="" ng-model="mode_paiement"></td>
 		</tr>
 		<tr>
 			<td>Affectation paiement</td>
-			<td><input name="civilite" size="40" value="" ng-model="affectation_paiement"></td>
+			<td><input name="affectation_paiement" size="40" value="" ng-model="affectation_paiement"></td>
 		</tr>
 		<tr>
 			<td>Montant paiement</td>
-			<td><input name="ville" size="40" value="" ng-model="montant_paiement"></td>
+			<td><input name="montant_paiement" size="40" value="" ng-model="montant_paiement"></td>
 		</tr>
 		<tr>
-			<td>Appartement</td>
+			<td>Propriete</td>
 			<td>
 								<div class="col-sm-4" style="padding:0;">
-				           <div id="num_appartement" class="selectpicker" data-clear="true" data-live="true">
+				           <div id="num_propriete" class="selectpicker" data-clear="true" data-live="true">
                                     <a href="#" class="clear"><span class="fa fa-times"></span><span class="sr-only">Annuler la sélection</span></a>
                                     <button data-id="prov" type="button" class="btn btn-md btn-block btn-default dropdown-toggle">
                                         <span class="placeholder">Choisis une option</span>
@@ -77,18 +78,13 @@ llxHeader();
                                                         <span class="fa fa-search"></span>
                                                       <a href="#" class="filter-clear"><span><i class="fa fa-times" aria-hidden="true"></i> Supp. filtre</span></a>
                                                     </span>
-                                                    <input type="text" placeholder="Search in the list" id="input-bts-ex-5" class="form-control live-search" aria-describedby="search-icon5" tabindex="1" />
+                                                    <input type="text" placeholder="Chercher dans la liste" id="input-bts-ex-5" class="form-control live-search" aria-describedby="search-icon5" tabindex="1" />
                                                 </div>
                                             </div>
                                             <div class="list-to-filter">
                                                 <ul class="list-unstyled">
                                                     <li class="optgroup">
-                                                        <span class="optgroup-header">List Group <span class="subtext"></span></span>
-                                                        <ul class="list-unstyled" id="ul_appartement">
-<!--                                                             <li class="filter-item items" data-filter="item_2" data-value="2">item 2</li>
-                                                            <li class="filter-item items" data-filter="item 3" data-value="3">item 3</li>
-                                                            <li class="filter-item items" data-filter="item 4" data-value="4">item 4</li>
-                                                            <li class="filter-item items" data-filter="item 5" data-value="5">item 5</li> -->
+                                                        <ul class="list-unstyled" id="ul_propriete">
                                                         </ul>
                                                     </li>
                                                 </ul>
@@ -104,12 +100,19 @@ llxHeader();
 				
 			</td>
 		</tr>
+		<tr>
+			<td>Date reçus</td>
+      <td><input name="date_recu" id="date_recu" size="40" value="" ng-model="date_recu"></td>
+		</tr>
+		<tr>
+			<td>Charge reçus</td>
+      <td><input name="charge_recu" id="charge_recu" size="40" value="" ng-model="charge_recu"></td>
+		</tr>
 		</table>
 	</div>
 		<div class="center">
                     <input type="button" class="button" name="valider" ng-click="funcValider()" value="Valider">
                     <a href="liste.php" class="button" name="annuler" value="Annuler">Annuler</a>
-										<a class="button" id='btn_test' name="btn_test" value="btn_test">btn_test</a>
 		</div>
 	</form>
 </div>
@@ -119,10 +122,9 @@ llxFooter();
 ?>
 <script src="script.js"></script>
 
-        <script src="/htdocs/syndic/js/tabcomplete.min.js"></script>
-        <script src="/htdocs/syndic/js/livefilter.min.js"></script>
-        <script src="/htdocs/syndic/js/bootstrap-select.js"></script>
-
+<script src="/htdocs/syndic/js/tabcomplete.min.js"></script>
+<script src="/htdocs/syndic/js/livefilter.min.js"></script>
+<script src="/htdocs/syndic/js/bootstrap-select.js"></script>
 
 <?php
 

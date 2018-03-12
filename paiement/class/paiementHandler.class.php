@@ -30,21 +30,25 @@ class paiementHandler extends SyndicPaiement {
                 echo $this->fetch();
                 break;
             case "create":
-                $this->fk_appartement          = $data->fk_appartement;
+                $this->fk_propriete          = $data->fk_propriete;
                 $this->num_paiement            = $data->num_paiement;
                 $this->date_paiement           = $data->date_paiement;
                 $this->mode_paiement           = $data->mode_paiement ;
                 $this->affectation_paiement    = $data->affectation_paiement ;
                 $this->montant_paiement        = $data->montant_paiement ; 
+                $this->date_recu               = $data->date_recu ; 
+                $this->charge_recu             = $data->charge_recu ; 
                 echo $this->create();
                 break;
             case "update":
-                $this->fk_appartement          = $data->fk_appartement;
+                $this->fk_propriete          = $data->fk_propriete;
                 $this->num_paiement            = $data->num_paiement;
                 $this->date_paiement           = $data->date_paiement;
                 $this->mode_paiement           = $data->mode_paiement ;
                 $this->affectation_paiement    = $data->affectation_paiement ;
-                $this->montant_paiement        = $data->montant_paiement ; 
+                $this->montant_paiement        = $data->montant_paiement ;
+                $this->date_recu               = $data->date_recu ; 
+                $this->charge_recu             = $data->charge_recu ; 
                 echo $this->update($data->id);
                 break;
             case "delete":
@@ -59,8 +63,8 @@ class paiementHandler extends SyndicPaiement {
            case "pagination":
                 echo $this->next_previous_id($data->id);
                 break;
-          case "fetch_combo_appartement":
-                echo $this->fetch_combo_appartement();
+          case "fetch_combo_propriete":
+                echo $this->fetch_combo_propriete();
                 break;
            case "method3":
                 $this->doMethod1();
