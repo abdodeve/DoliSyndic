@@ -1,0 +1,2 @@
+[05-Mar-2018 23:16:48 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 76046336 bytes) in /home/marocgee/public_html/gestion-tva/htdocs/syndic/framework/app/Http/Controllers/userController.php on line 82
+[05-Mar-2018 23:18:54 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 76046336 bytes) in /home/marocgee/public_html/gestion-tva/htdocs/syndic/framework/app/Http/Controllers/userController.php on line 82

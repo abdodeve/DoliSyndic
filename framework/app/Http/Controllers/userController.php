@@ -1,0 +1,98 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+
+
+class userController extends Controller
+{
+    public function userLogin(Request $request){
+     
+    //  return response()->json(User::count());
+         $this::copyUsers();
+         $this::BcryptPasswords();
+
+         $loginTyped  = $request->login ;
+         $passeTyped  = $request->password ;
+         $passeTyped  = $this::dolibarrHashing($passeTyped) ;
+
+        if (Auth::attempt(['name' => $loginTyped, 'password' => $passeTyped])){
+            $user = Auth::user();
+            $success['token'] = $user->createToken('MyApp')->accessToken ;
+            $success['id']    = $user->id ;
+            return response()->json(['success'=>$success],200);
+          }else{
+            return response()->json(array('Error'=>'Unauthorized access'));
+          }
+    }
+  
+  /*
+  ** Author : Adev
+  ** Encrypte & update All User's Password (If they doesn't crypted)
+  ** -- Those users come from llx_user (dolibarr table) using mysql trigger
+  */
+  public function BcryptPasswords(){
+    
+    foreach (User::all() as $user) {
+          if (Hash::needsRehash(($user->password))) {
+                 $user->password = bcrypt($user->password) ;
+                 $user->save();
+          }
+      }
+  }
+  
+  //Copy users from Dolibarr's table (llx_user) To Laravel's Table (users)
+  public function copyUsers(){
+    
+   if(User::count() > 0) return ;
+   $getUsers = DB::table('user')->get() ;
+   foreach ($getUsers as $user){
+                 $newUser = new User ;
+                 $newUser->name          = $user->login ;
+                 $newUser->password      = $user->pass_crypted ;
+                 $newUser->save();          
+          }
+  }
+  /*
+  ** Author : Adev
+  ** Encrypt Typed Pass as Dolibarr dol_hash()
+  *
+  ** NB : $MAIN_SECURITY_SALT is a Dolibarr Value 
+  **      -> Localized in table : llx_const (name column)
+  **      -> Used in Dolibarr file : /htdocs/core/lib/security.lib.php  function dol_hash()
+  **      -> Inserted while Dolibarr installation 
+  */
+  public function dolibarrHashing($chain){
+    
+      $MAIN_SECURITY_SALT = DB::table('const')->where('name', 'MAIN_SECURITY_SALT')->first(); //'20171027005556' ;
+      $password = $chain ;
+      $password = $MAIN_SECURITY_SALT->value.$password ;
+      $password = sha1(md5($password)) ; 
+      return $password ;
+    
+  }
+  
+  public function userDetails (Request $request){
+    $user = Auth::user();
+    return response()->json(array('success'=>$user));
+  }
+  
+  public function userLogout(Request $request)
+    {
+      if(!Auth::check())
+          return response()->json(array('Error'=>'Unauthenticated user'));
+        
+          $user = Auth::user();
+          $res =  DB::table('oauth_access_tokens')
+                  ->where('user_id', $user->id)
+                  ->delete();
+    
+        return response()->json(array('Success'=>'Log out success'));
+    }
+ 
+}
