@@ -55,6 +55,7 @@ function func_setupCtrl ($scope,$http,$location) {
         req.then(function mySuccess(response) {
                 console.log('Succes get data');
                 console.log(response);
+                $('.alert').alert();
             },
             function myError(response) {
                 console.log('Error get data');
