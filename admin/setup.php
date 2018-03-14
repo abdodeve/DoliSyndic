@@ -62,10 +62,10 @@ include '../header.php';
 																				<div class="input-group">
 																							<div class="input-group-prepend">
 																								<div class="input-group-text">
-																									<input type="radio" id="penalite_static" name="penalite" ng-model="isStatic" value="1">
+																									<input type="radio" id="penalite_static" name="penalite" ng-model="is_penalite_static" value="1">
 																								</div>
 																							</div>
-																					<input type="text" class="form-control" placeholder="Penalite statique" ng-disabled="isStatic==1 ? false : true">
+																					<input type="text" class="form-control" placeholder="Penalite statique" ng-model="penalite_static_frais" ng-disabled="is_penalite_static==1 ? false : true">
 																				</div>
 																			</label>
 																		</div>
@@ -74,10 +74,10 @@ include '../header.php';
 																					<div class="input-group">
 																							<div class="input-group-prepend">
 																								<div class="input-group-text">
-																								<input type="radio" id="penalite_dynamic" name="penalite" ng-model="isStatic" value="0">
+																								<input type="radio" id="penalite_dynamic" name="penalite" ng-model="is_penalite_static" value="0">
 																								</div>
 																							</div>
-																						<input type="text" class="form-control" placeholder="Penalite dynamique" ng-disabled="isStatic==0 ? false : true">
+																						<input type="text" class="form-control" placeholder="Penalite dynamique" ng-model="penalite_dynamic_taux" ng-disabled="is_penalite_static==0 ? false : true">
 																					</div>
 																				</label>
 																		 </div>
@@ -93,17 +93,17 @@ include '../header.php';
                                 <form class="row radio_input">
 																			<div class="col-md-4">
 																				<label for="budget">Budget
-																						<input type="text" id="budget" class="form-control">
+																						<input type="text" id="budget" ng-model="budget" class="form-control">
 																				</label>
 																			</div>
 																			<div class="col-md-4">
 																				<label for="taux_tantieme">Taux tantieme
-																						<input type="text" id="taux_tantieme" class="form-control">
+																						<input type="text" id="taux_tantieme" ng-model="taux_tantieme" class="form-control">
 																				</label>
 																			</div>
 																			<div class="col-md-4">
 																				<label for="totale_tantieme">Totale tantieme
-																						<input type="text" id="totale_tantieme" class="form-control">
+																						<input type="text" id="totale_tantieme" ng-model="totale_tantieme" class="form-control">
 																				</label>
 																			</div>
 																</form>
@@ -166,14 +166,4 @@ include '../header.php';
           </div>
               
     </div>
-
-
-<script>
-var setupApp     = angular.module('setupApp', ['ngSanitize','ngRoute']) ;
-var setupCtrl    = setupApp.controller('setupCtrl', ['$scope','$http', func_setupCtrl]);
-
-function func_setupCtrl ($scope,$http,$location) {
-   $scope.adev = "1" ;
-	$scope.isStatic = "1" ;
-}
-</script>
+    <script src="script.js"></script>
