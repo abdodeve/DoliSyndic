@@ -48,8 +48,13 @@ include '../header.php';
       <td><input name="date_paiement" id="date_paiement" size="40" value="" ng-model="date_paiement"></td>
 		</tr>
 		<tr>
-			<td>Mode paiement</td>
-			<td><input name="mode_paiement" size="40" value="" ng-model="mode_paiement"></td>
+			     <td>Mode paiement</td>
+                  <!-- 			<td><input name="titre" size="40" value="" ng-model="titre"></td> -->
+                  <td>
+                     <label><input type="radio" name="mode_paiement" ng-model="mode_paiement" value="cheque"> Chèque</label>
+                     <label><input type="radio" name="mode_paiement" ng-model="mode_paiement" value="espece"> Espèces</label>
+                     <label><input type="radio" name="mode_paiement" ng-model="mode_paiement" value="virement"> Virement</label>
+                  </td>
 		</tr>
 		<tr>
 			<td>Affectation paiement</td>
