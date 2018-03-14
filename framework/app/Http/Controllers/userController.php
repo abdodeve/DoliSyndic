@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\DB;
 
 class userController extends Controller
 {
+
+/********************************* Functions in Routes ***********************************************/
+
     public function userLogin(Request $request){
      
     //  return response()->json(User::count());
@@ -30,7 +33,27 @@ class userController extends Controller
             return response()->json(array('Error'=>'Unauthorized access'));
           }
     }
+
+  public function userDetails (Request $request){
+    $user = Auth::user();
+    return response()->json(array('success'=>$user));
+  }
   
+  public function userLogout(Request $request)
+    {
+      if(!Auth::check())
+          return response()->json(array('Error'=>'Unauthenticated user'));
+        
+          $user = Auth::user();
+          $res =  DB::table('oauth_access_tokens')
+                  ->where('user_id', $user->id)
+                  ->delete();
+    
+        return response()->json(array('Success'=>'Log out success'));
+    }
+
+/********************************* Functions not in Routes ***********************************************/
+
   /*
   ** Author : Adev
   ** Encrypte & update All User's Password (If they doesn't crypted)
@@ -77,22 +100,5 @@ class userController extends Controller
     
   }
   
-  public function userDetails (Request $request){
-    $user = Auth::user();
-    return response()->json(array('success'=>$user));
-  }
-  
-  public function userLogout(Request $request)
-    {
-      if(!Auth::check())
-          return response()->json(array('Error'=>'Unauthenticated user'));
-        
-          $user = Auth::user();
-          $res =  DB::table('oauth_access_tokens')
-                  ->where('user_id', $user->id)
-                  ->delete();
-    
-        return response()->json(array('Success'=>'Log out success'));
-    }
  
 }
