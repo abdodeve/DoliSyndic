@@ -11,6 +11,10 @@ function func_setupCtrl ($scope,$http,$location) {
      var req = $http({
             method  :   'POST',
             url     :   ajaxUrl,
+            headers : 	{
+                                'Accept'        :'application/json',
+                                'Authorization' :'Bearer '+token
+                        }
            // data    :   {action:"single",id: the_id}
         });
         req.then(function mySuccess(response) {
