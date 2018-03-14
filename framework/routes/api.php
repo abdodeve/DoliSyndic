@@ -17,18 +17,21 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//User Routes
 Route::post('userLogin','userController@userLogin');
 Route::post('userDetails','userController@userDetails')->middleware('auth:api');
 Route::post('userLogout','userController@userLogout')->middleware('auth:api');
 
-Route::get('hello', function () {
+//Parametre Routes
+Route::post('parametreUpdate','ParametreController@update');
 
-	$data = array('nom'=>'abdo','age'=>25) ;
+// Route::get('hello', function () {
+// 		$data = array('nom'=>'abdo','age'=>25) ;
+//     return json_encode($data) ;
+// })->middleware('auth:api');
 
-    return json_encode($data) ;
-})->middleware('auth:api');
+// Route::post('login', function () {
+// 	$data = array('page'=>'login page') ;
+//     return json_encode($data) ;
+// })->name('login');
 
-Route::post('login', function () {
-	$data = array('page'=>'login page') ;
-    return json_encode($data) ;
-})->name('login');

@@ -24,5 +24,7 @@ create table llx_syndic_residence
   nom                        varchar(200),
   adresse                    varchar(200),
   cp_res                     varchar(200),
-  ville                      varchar(200)
+  ville                      varchar(200),
+  created_at                 timestamp NULL DEFAULT NULL,
+  updated_at                 timestamp NULL DEFAULT NULL
 )ENGINE=innodb;

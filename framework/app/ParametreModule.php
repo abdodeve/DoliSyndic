@@ -8,4 +8,5 @@ class ParametreModule extends Model
 {
     protected $table          = 'syndic_parametre';
     protected $primaryKey     = 'rowid';
+  
 }

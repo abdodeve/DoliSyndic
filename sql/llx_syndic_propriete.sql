@@ -13,5 +13,7 @@ create table llx_syndic_propriete
   num_titre                  varchar(200),
   quote_part_terrain         varchar(200),
   surface                    int,
-  pt_indivision              int
+  pt_indivision              int,
+  created_at                 timestamp NULL DEFAULT NULL,
+  updated_at                 timestamp NULL DEFAULT NULL
 )ENGINE=innodb;

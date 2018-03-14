@@ -25,5 +25,10 @@ create table llx_syndic_parametre
   totale_tantieme                 float,
   is_penalite_static              bool,
   penalite_static_frais           float,
-  penalite_dynamic_taux           float
+  penalite_dynamic_taux           float,
+  created_at                      timestamp NULL DEFAULT NULL,
+  updated_at                      timestamp NULL DEFAULT NULL
 )ENGINE=innodb;
+
+--Insert default line
+INSERT INTO `llx_syndic_parametre` (`rowid`, `budget`, `taux_tantieme`, `totale_tantieme`, `is_penalite_static`, `penalite_static_frais`, `penalite_dynamic_taux`) VALUES (1, '0', '0', '0', '0', '0', '0');

@@ -31,5 +31,7 @@ create table llx_syndic_proprietaire
   email_1           varchar(200),
   email_2           varchar(200),
   tel_1             varchar(200),
-  tel_2             varchar(200)
+  tel_2             varchar(200),
+  created_at        timestamp NULL DEFAULT NULL,
+  updated_at        timestamp NULL DEFAULT NULL
 )ENGINE=innodb;

@@ -27,5 +27,7 @@ create table llx_syndic_paiement
   affectation_paiement  varchar(200),
   montant_paiement      float,
   date_recu             date ,
-  charge_recu           float
+  charge_recu           float,
+  created_at            timestamp NULL DEFAULT NULL,
+  updated_at            timestamp NULL DEFAULT NULL
 )ENGINE=innodb;
