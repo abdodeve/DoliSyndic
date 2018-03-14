@@ -60,7 +60,7 @@ function func_setupCtrl ($scope,$http,$location) {
             function myError(response) {
                 console.log('Error get data');
                 console.log(response);
-                $.notify("Erreur ","error");
+                $.notify("Erreur","error");
 
             });
 
