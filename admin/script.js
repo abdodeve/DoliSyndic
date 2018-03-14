@@ -13,7 +13,7 @@ function func_setupCtrl ($scope,$http,$location) {
             url     :   ajaxUrl,
             headers : 	{
                                 'Accept'        :'application/json',
-                                'Authorization' :'Bearer '+token
+                                'Authorization' :'Bearer '+localStorage.token
                         }
            // data    :   {action:"single",id: the_id}
         });
