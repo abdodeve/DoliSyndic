@@ -51,9 +51,9 @@ include '../header.php';
 			     <td>Mode paiement</td>
                   <!-- 			<td><input name="titre" size="40" value="" ng-model="titre"></td> -->
                   <td>
-                     <label><input type="radio" name="mode_paiement" ng-model="mode_paiement" value="cheque"> Chèque</label>
-                     <label><input type="radio" name="mode_paiement" ng-model="mode_paiement" value="espece"> Espèces</label>
-                     <label><input type="radio" name="mode_paiement" ng-model="mode_paiement" value="virement"> Virement</label>
+                     <label><input type="radio" name="mode_paiement" ng-model="mode_paiement" value="Cheque"> Chèque</label>
+                     <label><input type="radio" name="mode_paiement" ng-model="mode_paiement" value="Espece"> Espèce</label>
+                     <label><input type="radio" name="mode_paiement" ng-model="mode_paiement" value="Virement"> Virement</label>
                   </td>
 		</tr>
 		<tr>
