@@ -20,14 +20,12 @@ function func_setupCtrl ($scope,$http,$location) {
         req.then(function mySuccess(response) {
                 console.log('Succes get data');
                 console.log(response);
-                console.log($scope.is_penalite_static);
-                console.log(response.data.is_penalite_static);
-                // $scope.is_penalite_static 			= response.data[0].is_penalite_static		
-                // $scope.budget      					= response.data[0].budget;
-                // $scope.taux_tantieme        	    = response.data[0].taux_tantieme;
-                // $scope.totale_tantieme  			= response.data[0].totale_tantieme;
-                // $scope.penalite_static_frais        = response.data[0].penalite_static_frais;
-                // $scope.penalite_dynamic_taux        = response.data[0].penalite_dynamic_taux;
+                $scope.is_penalite_static 			= response.data.is_penalite_static		
+                $scope.budget      					= response.data.budget;
+                $scope.taux_tantieme        	    = response.data.taux_tantieme;
+                $scope.totale_tantieme  			= response.data.totale_tantieme;
+                $scope.penalite_static_frais        = response.data.penalite_static_frais;
+                $scope.penalite_dynamic_taux        = response.data.penalite_dynamic_taux;
 
             },
             function myError(response) {
