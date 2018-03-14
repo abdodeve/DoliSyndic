@@ -84,7 +84,7 @@ include '../header.php';
 																	</form>
                               </td>
                               <td class="right" align="right" class="nohover" rowspan="200">
-                                <input type="submit" class="button" value="Modifier">
+                                <input type="submit" class="button" value="Modifier" ng-click="func_update()">
                               </td>
                           </tr>
                           <tr class="oddeven">
