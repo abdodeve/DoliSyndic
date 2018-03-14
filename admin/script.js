@@ -35,7 +35,7 @@ function func_setupCtrl ($scope,$http,$location) {
     //Click Sur Modifier
     $scope.func_update = function(){
 
-    	$.notify("Hello World");
+    	$.notify("Hello World","success");
     	// var ajaxUrl = window.location.origin+"/htdocs/syndic/framework/public/api/parametreUpdate" ;
      // 	var req = $http({
      //        method  :   'POST',
