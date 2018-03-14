@@ -171,4 +171,4 @@ include '../header.php';
 <div class="notify_element"></div>
 
 <script src="script.js"></script>
-<script src="./js/notify.min.js"></script>
+<script src="../js/notify.min.js"></script>
