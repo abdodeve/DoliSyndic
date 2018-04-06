@@ -26,6 +26,10 @@ Route::post('userLogout','userController@userLogout')->middleware('auth:api');
 Route::post('parametreUpdate','ParametreController@update')->middleware('auth:api');
 Route::post('parametreFetch','ParametreController@fetch')->middleware('auth:api');
 
+// Route::group(['middleware' => ['auth:api']], function () {
+//     //
+// });
+
 // Route::get('hello', function () {
 // 		$data = array('nom'=>'abdo','age'=>25) ;
 //     return json_encode($data) ;

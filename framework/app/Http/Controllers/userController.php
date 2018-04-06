@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
 
+
 class userController extends Controller
 {
 
@@ -36,6 +37,7 @@ class userController extends Controller
 
   public function userDetails (Request $request){
     $user = Auth::user();
+
     return response()->json(array('success'=>$user));
   }
   
