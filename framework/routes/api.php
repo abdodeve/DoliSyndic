@@ -22,12 +22,16 @@ Route::post('userLogin','userController@userLogin');
 Route::post('userDetails','userController@userDetails')->middleware('auth:api');
 Route::post('userLogout','userController@userLogout')->middleware('auth:api');
 
-//Parametre Routes
-Route::post('parametreUpdate','ParametreController@update')->middleware('auth:api');
-Route::post('parametreFetch','ParametreController@fetch')->middleware('auth:api');
+Route::group(['middleware' => ['auth:api']], function () {
 
-//Proprietaire Routes
-Route::post('proprietaireFetch','proprietaireController@fetch')->middleware('auth:api');
+    //Parametre Routes
+    Route::post('parametreUpdate','ParametreController@update');
+    Route::post('parametreFetch','ParametreController@fetch');
+
+    //Proprietaire Routes
+    Route::post('proprietaireFetch','proprietaireController@fetch');
+
+});
 
 // Route::group(['middleware' => ['auth:api']], function () {
 //     //
