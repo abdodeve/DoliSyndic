@@ -9,7 +9,6 @@ class proprietaireController extends Controller
 {
     //Fetch data
     public function fetch(Request $request){
-
         $proprietaire = proprietaireModel::all();
       	return response()->json($proprietaire);
   	}

@@ -29,21 +29,6 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::post('parametreFetch','ParametreController@fetch');
 
     //Proprietaire Routes
-    Route::post('proprietaireFetch','proprietaireController@fetch');
+    Route::post('proprietaireFetch','proprietaire/proprietaireController@fetch');
 
 });
-
-// Route::group(['middleware' => ['auth:api']], function () {
-//     //
-// });
-
-// Route::get('hello', function () {
-// 		$data = array('nom'=>'abdo','age'=>25) ;
-//     return json_encode($data) ;
-// })->middleware('auth:api');
-
-// Route::post('login', function () {
-// 	$data = array('page'=>'login page') ;
-//     return json_encode($data) ;
-// })->name('login');
-
