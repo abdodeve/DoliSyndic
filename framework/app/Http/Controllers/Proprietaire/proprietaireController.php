@@ -11,5 +11,12 @@ class proprietaireController extends Controller
     public function fetch(Request $request){
         $proprietaire = proprietaireModel::all();
       	return response()->json($proprietaire);
+    }
+    //Insert
+    public function insert(Request $request){
+        $proprietaire = new proprietaireModel();
+        $proprietaire->nom = 'jamalDebouz' ;
+        $proprietaire->save();
+      	return response()->json($proprietaire);
   	}
 }

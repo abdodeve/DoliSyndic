@@ -8,4 +8,5 @@ class proprietaireModel extends Model
 {
     protected $table          = 'syndic_proprietaire';
     protected $primaryKey     = 'rowid';
+    protected $nom            =  'nom' ;
 }

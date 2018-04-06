@@ -30,5 +30,7 @@ Route::group(['middleware' => ['auth:api']], function () {
 
     //Proprietaire Routes
     Route::post('proprietaireFetch','proprietaireController@fetch');
+    Route::post('proprietaireInsert','proprietaireController@insert');
+    
 
 });
