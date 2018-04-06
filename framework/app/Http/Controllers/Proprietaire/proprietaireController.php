@@ -15,7 +15,8 @@ class proprietaireController extends Controller
     //Insert
     public function insert(Request $request){
         $proprietaire = new proprietaireModel();
-        $proprietaire->nom = 'jamalDebouz' ;
+        $proprietaire->nom       = $request->nom ;
+        $proprietaire->prenom    = $request->prenom ;
         $proprietaire->save();
       	return response()->json($proprietaire);
   	}
