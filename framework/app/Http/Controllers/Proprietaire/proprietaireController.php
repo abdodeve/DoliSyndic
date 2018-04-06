@@ -22,8 +22,9 @@ class proprietaireController extends Controller
     }
     //Update
     public function update(Request $request){
-        $proprietaire = proprietaireModel::find(2) ;
-        $proprietaire->nom       = "AboHamza" ;
+        $proprietaire = proprietaireModel::find($request->rowid) ;
+        $proprietaire->nom       = $request->nom ;
+        $proprietaire->prenom    = $request->prenom ;
         $proprietaire->save();
       	return response()->json($proprietaire);
   	}
