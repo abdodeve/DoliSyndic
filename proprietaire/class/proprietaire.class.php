@@ -348,7 +348,7 @@ class SyndicProprietaire // extends CommonObject
 						LEFT JOIN 
 										".MAIN_DB_PREFIX."syndic_proprietaire 
 						ON 
-										".MAIN_DB_PREFIX."syndic_proprietaire.fk_propriete = ".MAIN_DB_PREFIX."syndic_propriete.rowid";
+										".MAIN_DB_PREFIX."syndic_propriete.rowid = ".MAIN_DB_PREFIX."syndic_proprietaire.fk_propriete";
 		
     $resql=$this->db->query($sql);
 	//If error in Sql

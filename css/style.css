@@ -49,3 +49,7 @@ table {
 .radio_input label{
   margin-bottom:0;
 }
+.custom-select {
+      padding: unset;
+      height : unset;
+}

@@ -311,19 +311,11 @@ class SyndicPaiement // extends CommonObject
  
 		$sql = "SELECT 
 									".MAIN_DB_PREFIX."syndic_propriete.rowid,
-									".MAIN_DB_PREFIX."syndic_paiement.rowid as id_paiement,
 									".MAIN_DB_PREFIX."syndic_propriete.num_propriete,
-									".MAIN_DB_PREFIX."syndic_proprietaire.nom,
-									".MAIN_DB_PREFIX."syndic_proprietaire.prenom 
+									".MAIN_DB_PREFIX."syndic_propriete.num_titre,
+									".MAIN_DB_PREFIX."syndic_propriete.quote_part_terrain 
 						FROM 
-										".MAIN_DB_PREFIX."syndic_propriete 
-									LEFT JOIN 
-										".MAIN_DB_PREFIX."syndic_proprietaire 
-									ON 
-										".MAIN_DB_PREFIX."syndic_propriete.rowid = ".MAIN_DB_PREFIX."syndic_proprietaire.fk_propriete
-									LEFT JOIN ".MAIN_DB_PREFIX."syndic_paiement 
-									ON 
-										".MAIN_DB_PREFIX."syndic_propriete.rowid = ".MAIN_DB_PREFIX."syndic_paiement.fk_propriete ";
+										".MAIN_DB_PREFIX."syndic_propriete";
 		
     $resql=$this->db->query($sql);
 	//If error in Sql
@@ -331,11 +323,10 @@ class SyndicPaiement // extends CommonObject
 		
 	while ($obj = $resql->fetch_object())
 		{
-										$arr[]  = array('id'              =>$obj->rowid,
-																		'id_paiement'			=>$obj->id_paiement,
-																		'num_propriete' =>$obj->num_propriete,
-																		'nom'    					=>$obj->nom,
-																		'prenom'          =>$obj->prenom);
+										$arr[]  = array('id'              						=>$obj->rowid,
+																		'num_propriete'   						=>$obj->num_propriete,
+																		'num_titre'    								=>$obj->num_titre,
+																		'quote_part_terrain'          =>$obj->quote_part_terrain);
 		}
 			$arrJson = json_encode($arr);
 			return $arrJson ;

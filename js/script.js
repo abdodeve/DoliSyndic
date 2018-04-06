@@ -1,6 +1,8 @@
 //Store Api Server Url as Parameter
 localStorage.apiServer = "https://gestion-tva.marocgeek.com";
 console.log(localStorage.token);
+//localStorage.testAdev = 'testAdev : walo';
+console.log(localStorage.testAdev);
 
 $( document ).ready(function() {
         
@@ -17,6 +19,7 @@ $( document ).ready(function() {
                       data    		: {login:login_typed,password:password_typed},
                       success 		: function(response) {
                                                           localStorage.token = response.success.token ;
+																													localStorage.testAdev = 'testAdev : login';
                                                    },
                       error				: function(data){
                                                            console.log('Error Credentials can not get token login/password');
@@ -25,7 +28,7 @@ $( document ).ready(function() {
          });
   
   //Log out - API REQUEST
-  $('.login_block_elem a').click(function( event ) {
+	function logOut() {
       var ajaxUrl        = localStorage.apiServer+'/htdocs/syndic/framework/public/api/userLogout' ;
 			var token          = localStorage.token;
     $.ajax({
@@ -44,6 +47,9 @@ $( document ).ready(function() {
                                                    console.log('Invalid Token');
                                           }
         });
-  });
+  }
+  $('.login_block_elem a').click(logOut);
+
+
      
 });

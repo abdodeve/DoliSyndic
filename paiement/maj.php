@@ -45,7 +45,8 @@ include '../header.php';
 		</tr>
 		<tr>
 			<td>Date paiement</td>
-      <td><input name="date_paiement" id="date_paiement" size="40" value="" ng-model="date_paiement"></td>
+      <td>
+				<input type="text" size="40" ng-model="date_paiement" jqdatepicker></td>
 		</tr>
 		<tr>
 			     <td>Mode paiement</td>
@@ -67,7 +68,14 @@ include '../header.php';
 		<tr>
 			<td>Propriete</td>
 			<td>
-								<div class="col-sm-4" style="padding:0;">
+				<div custom-select="t as t.num_propriete for t in proprietes | filter: {num_propriete: $searchTerm} " ng-model="person">
+					<div class="pull-left">
+						<strong>{{ t.num_propriete }}</strong><br />
+						<span>{{ t.num_titre }}</span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+<!-- 								<div class="col-sm-4" style="padding:0;">
 				           <div id="num_propriete" class="selectpicker" data-clear="true" data-live="true">
                                     <a href="#" class="clear"><span class="fa fa-times"></span><span class="sr-only">Annuler la sélection</span></a>
                                     <button data-id="prov" type="button" class="btn btn-md btn-block btn-default dropdown-toggle">
@@ -101,13 +109,13 @@ include '../header.php';
                                     </div>
                                     <input type="hidden" name="bts-ex-5" value="">
                                 </div>
-														</div>
+														</div> -->
 				
 			</td>
 		</tr>
 		<tr>
 			<td>Date reçus</td>
-      <td><input name="date_recu" id="date_recu" size="40" value="" ng-model="date_recu"></td>
+      <td><input name="date_recu" id="date_recu" size="40" value="" ng-model="date_recu" jqdatepicker></td>
 		</tr>
 		<tr>
 			<td>Charge reçus</td>
