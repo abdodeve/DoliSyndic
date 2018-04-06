@@ -29,6 +29,6 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::post('parametreFetch','ParametreController@fetch');
 
     //Proprietaire Routes
-    Route::post('proprietaireFetch','proprietaire\proprietaireController@fetch');
+    Route::post('proprietaireFetch','proprietaireController@fetch');
 
 });
