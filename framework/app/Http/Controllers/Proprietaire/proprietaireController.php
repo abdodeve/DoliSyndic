@@ -26,7 +26,8 @@ class proprietaireController extends Controller
         // $proprietaire->nom       = $request->nom ;
         // $proprietaire->prenom    = $request->prenom ;
         // $proprietaire->save();
-      	return response()->json($proprietaire);
+        $arr = array($proprietaire,$request->rowid) ;
+      	return response()->json($arr);
   	}
       
 }
