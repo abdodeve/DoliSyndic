@@ -21,13 +21,18 @@ class proprietaireController extends Controller
       	return response()->json($proprietaire);
     }
     //Update
-    public function update(Request $request){
-        $proprietaire = proprietaireModel::find($request->rowid) ;
-        // $proprietaire->nom       = $request->nom ;
-        // $proprietaire->prenom    = $request->prenom ;
-        // $proprietaire->save();
-        $arr = array($proprietaire,$request->rowid) ;
-      	return response()->json($arr);
+    public function update(Request $request, $rowid){
+        $proprietaire = proprietaireModel::find($rowid) ;
+        $proprietaire->nom       = $request->nom ;
+        $proprietaire->prenom    = $request->prenom ;
+        $proprietaire->save();
+      	return response()->json($proprietaire);
+  	}
+    //Delete
+    public function delete(Request $request, $rowid){
+        $proprietaire = proprietaireModel::find($rowid) ;
+        $res = $proprietaire->delete();
+      	return response()->json($res);
   	}
       
 }
