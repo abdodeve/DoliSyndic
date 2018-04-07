@@ -34,5 +34,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::put('proprietaireUpdate/{rowid}','proprietaireController@update');
     Route::delete('proprietaireDelete/{rowid}','proprietaireController@delete');
     
-
+});
+Route::post('testFunc',function(){
+    return 'api works' ;
 });
