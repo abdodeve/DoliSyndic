@@ -17,22 +17,21 @@ class userController extends Controller
 
     public function userLogin(Request $request){
      
-    //  return response()->json(User::count());
          $this::copyUsers();
          $this::BcryptPasswords();
+         return response()->json(array('Success'=>'Users Copied & Hashed')); 
+        //  $loginTyped  = $request->login ;
+        //  $passeTyped  = $request->password ;
+        //  $passeTyped  = $this::dolibarrHashing($passeTyped) ;
 
-         $loginTyped  = $request->login ;
-         $passeTyped  = $request->password ;
-         $passeTyped  = $this::dolibarrHashing($passeTyped) ;
-
-        if (Auth::attempt(['name' => $loginTyped, 'password' => $passeTyped])){
-            $user = Auth::user();
-            $success['token'] = $user->createToken('MyApp')->accessToken ;
-            $success['id']    = $user->id ;
-            return response()->json(['success'=>$success],200);
-          }else{
-            return response()->json(array('Error'=>'Unauthorized access'));
-          }
+        // if (Auth::attempt(['name' => $loginTyped, 'password' => $passeTyped])){
+        //     $user = Auth::user();
+        //     $success['token'] = $user->createToken('MyApp')->accessToken ;
+        //     $success['id']    = $user->id ;
+        //     return response()->json(['success'=>$success],200);
+        //   }else{
+        //     return response()->json(array('Error'=>'Unauthorized access'));
+        //   }
     }
 
   public function userDetails (Request $request){
