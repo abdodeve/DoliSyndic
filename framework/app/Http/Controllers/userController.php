@@ -15,23 +15,28 @@ class userController extends Controller
 
 /********************************* Functions in Routes ***********************************************/
 
+    public function copyHashUsers(Request $request){
+        
+      $this::copyUsers();
+      $this::BcryptPasswords();
+      return response()->json(array('Success'=>'Users Copied & Hashed')); 
+    }
     public function userLogin(Request $request){
      
          $this::copyUsers();
          $this::BcryptPasswords();
-         return response()->json(array('Success'=>'Users Copied & Hashed')); 
-        //  $loginTyped  = $request->login ;
-        //  $passeTyped  = $request->password ;
-        //  $passeTyped  = $this::dolibarrHashing($passeTyped) ;
+         $loginTyped  = $request->login ;
+         $passeTyped  = $request->password ;
+         $passeTyped  = $this::dolibarrHashing($passeTyped) ;
 
-        // if (Auth::attempt(['name' => $loginTyped, 'password' => $passeTyped])){
-        //     $user = Auth::user();
-        //     $success['token'] = $user->createToken('MyApp')->accessToken ;
-        //     $success['id']    = $user->id ;
-        //     return response()->json(['success'=>$success],200);
-        //   }else{
-        //     return response()->json(array('Error'=>'Unauthorized access'));
-        //   }
+        if (Auth::attempt(['name' => $loginTyped, 'password' => $passeTyped])){
+            $user = Auth::user();
+            $success['token'] = $user->createToken('MyApp')->accessToken ;
+            $success['id']    = $user->id ;
+            return response()->json(['success'=>$success],200);
+          }else{
+            return response()->json(array('Error'=>'Unauthorized access'));
+          }
     }
 
   public function userDetails (Request $request){
@@ -73,7 +78,8 @@ class userController extends Controller
   //Copy users from Dolibarr's table (llx_user) To Laravel's Table (users)
   public function copyUsers(){
     
-   if(User::count() > 0) return ;
+   if(User::count() < 0) return ;
+   User::query()->delete();
    $getUsers = DB::table('user')->get() ;
    foreach ($getUsers as $user){
                  $newUser = new User ;

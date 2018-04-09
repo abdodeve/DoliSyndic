@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //User Routes
+Route::post('copyHashUsers','userController@copyHashUsers');
 Route::post('userLogin','userController@userLogin');
 Route::post('userDetails','userController@userDetails')->middleware('auth:api');
 Route::post('userLogout','userController@userLogout')->middleware('auth:api');
