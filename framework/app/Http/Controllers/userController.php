@@ -78,6 +78,7 @@ class userController extends Controller
    foreach ($getUsers as $user){
                  $newUser = new User ;
                  $newUser->name          = $user->login ;
+                 $newUser->email         = $user->login ;
                  $newUser->password      = $user->pass_crypted ;
                  $newUser->save();          
           }
