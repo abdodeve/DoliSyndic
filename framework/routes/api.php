@@ -29,12 +29,11 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::post('parametreFetch','ParametreController@fetch');
 
     //Proprietaire Routes
-    Route::get('proprietaireFetch','proprietaireController@fetch');
+    Route::get('proprietaireFetch','proprietaireController@fetch'); 
+    Route::get('proprietaireSingle/{rowid}','proprietaireController@single'); 
     Route::post('proprietaireInsert','proprietaireController@insert');
     Route::put('proprietaireUpdate/{rowid}','proprietaireController@update');
     Route::delete('proprietaireDelete/{rowid}','proprietaireController@delete');
     
 });
-Route::post('testFunc',function(){
-    return 'api works' ;
-});
+

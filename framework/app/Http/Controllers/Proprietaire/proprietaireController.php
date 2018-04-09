@@ -7,11 +7,18 @@ use App\proprietaireModel;
 
 class proprietaireController extends Controller
 {
-    //Fetch data
+    //Fetch
     public function fetch(Request $request){
         $proprietaire = proprietaireModel::all();
       	return response()->json($proprietaire);
     }
+
+    //Single
+    public function single(Request $request,$rowid){
+        $proprietaire = proprietaireModel::find($rowid) ;
+        return response()->json($proprietaire);
+      }
+
     //Insert
     public function insert(Request $request){
         $proprietaire = new proprietaireModel();
@@ -20,6 +27,7 @@ class proprietaireController extends Controller
         $proprietaire->save();
       	return response()->json($proprietaire);
     }
+
     //Update
     public function update(Request $request, $rowid){
         $proprietaire = proprietaireModel::find($rowid) ;
@@ -27,7 +35,8 @@ class proprietaireController extends Controller
         $proprietaire->prenom    = $request->prenom ;
         $proprietaire->save();
       	return response()->json($proprietaire);
-  	}
+    }
+    
     //Delete
     public function delete(Request $request, $rowid){
         $proprietaire = proprietaireModel::find($rowid) ;
