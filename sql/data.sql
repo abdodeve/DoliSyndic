@@ -38,10 +38,10 @@
 -----------------------------------------------------------------------------------------------------------------------
 
 -- Action : Insert
-CREATE TRIGGER insert_users AFTER INSERT ON llx_user FOR EACH ROW BEGIN delete from llx_users ; INSERT INTO llx_users (`id`,`name`,`password`) SELECT `rowid`,`login`,`pass_crypted` as email FROM llx_user ; END ;
+--CREATE TRIGGER insert_users AFTER INSERT ON llx_user FOR EACH ROW BEGIN delete from llx_users ; INSERT INTO llx_users (`id`,`name`,`password`) SELECT `rowid`,`login`,`pass_crypted` as email FROM llx_user ; END ;
 
 -- Action : Update
-CREATE TRIGGER update_users AFTER update ON llx_user FOR EACH ROW BEGIN delete from llx_users ; INSERT INTO llx_users (`id`,`name`,`password`) SELECT `rowid`,`login`,`pass_crypted` as email FROM llx_user ; END ;
+--CREATE TRIGGER update_users AFTER update ON llx_user FOR EACH ROW BEGIN delete from llx_users ; INSERT INTO llx_users (`id`,`name`,`password`) SELECT `rowid`,`login`,`pass_crypted` as email FROM llx_user ; END ;
 
 -- Action : Delete
-CREATE TRIGGER delete_users AFTER DELETE ON llx_user FOR EACH ROW BEGIN delete from llx_users ; INSERT INTO llx_users (`id`,`name`,`password`) SELECT `rowid`,`login`,`pass_crypted` as email FROM llx_user ; END ;
+--CREATE TRIGGER delete_users AFTER DELETE ON llx_user FOR EACH ROW BEGIN delete from llx_users ; INSERT INTO llx_users (`id`,`name`,`password`) SELECT `rowid`,`login`,`pass_crypted` as email FROM llx_user ; END ;
