@@ -30,7 +30,7 @@ class proprietaireController extends Controller
 
     //Update
     public function update(Request $request, $rowid){
-        $proprietaire = proprietaireModel::find($rowid) ;
+        $proprietaire = proprietaireModel::
         $proprietaire->nom       = $request->nom ;
         $proprietaire->prenom    = $request->prenom ;
         $proprietaire->save();
@@ -40,8 +40,8 @@ class proprietaireController extends Controller
     //Delete
     public function delete(Request $request, $rowid){
         $proprietaire = proprietaireModel::find($rowid) ;
-        $res = $proprietaire->delete();
-      	return response()->json($res);
+        $proprietaire->delete() ;
+      	return response()->json($proprietaire);
   	}
       
 }
