@@ -58,6 +58,25 @@ class userController extends Controller
         return response()->json(array('Success'=>'Log out success'));
     }
 
+  // Change password
+  public function changePassword(Request $request){
+
+    $currentPassword  = $request->currentPassword ;
+    $newPassword      = $request->newPassword ;
+    $repeatPassword   = $request->repeatPassword ;
+    $user = Auth::user();
+
+    if(!Hash::check($currentPassword, $user->password) || $user->password === $currentPassword)
+    return response()->json(array('Response'=>'incorrect_password','Msg' => 'password incorrecte')) ;
+
+    if($newPassword !== $repeatPassword)
+    return response()->json(array('Response'=>'not_match','Msg' => 'new passwords not match')) ;
+
+    $user->password = bcrypt($request->newPassword) ;
+    $user->save() ;
+    return response()->json(array('Response'=>'password_changed','Msg' => 'Password changed')) ;
+  }
+
 /********************************* Functions not in Routes ***********************************************/
 
   /*
@@ -89,6 +108,7 @@ class userController extends Controller
                  $newUser->save();          
           }
   }
+
   /*
   ** Author : Adev
   ** Encrypt Typed Pass as Dolibarr dol_hash()

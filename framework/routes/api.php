@@ -25,16 +25,18 @@ Route::post('userLogout','userController@userLogout')->middleware('auth:api');
 
 Route::group(['middleware' => ['auth:api']], function () {
 
+    //User Routes
+    Route::post('changePassword','userController@changePassword'); 
+
     //Parametre Routes
     Route::post('parametreUpdate','ParametreController@update');
     Route::post('parametreFetch','ParametreController@fetch');
 
     //Proprietaire Routes
-    Route::get('proprietaireFetch','proprietaireController@fetch'); 
-    Route::get('proprietaireSingle/{rowid}','proprietaireController@single'); 
+    Route::get('proprietaireFetch', 'proprietaireController@fetch');
+    Route::get('proprietaireSingle/{rowid}', 'proprietaireController@single');
     Route::post('proprietaireInsert','proprietaireController@insert');
-    Route::put('proprietaireUpdate/{rowid}','proprietaireController@update');
-    Route::delete('proprietaireDelete/{rowid}','proprietaireController@delete');
-    
-});
-
+    Route::put('proprietaireUpdate/{rowid}', 'proprietaireController@update');
+    Route::delete('proprietaireDelete/{rowid}', 'proprietaireController@delete');
+    Route::post('proprietaireDeleteMultiple', 'proprietaireController@deleteMultiple');
+}) ;
