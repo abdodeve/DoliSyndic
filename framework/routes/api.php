@@ -22,6 +22,12 @@ Route::post('copyHashUsers','userController@copyHashUsers');
 Route::post('userLogin','userController@userLogin');
 Route::post('userDetails','userController@userDetails')->middleware('auth:api');
 Route::post('userLogout','userController@userLogout')->middleware('auth:api');
+Route::post('forgot/password','userController@forgotPassword');
+
+
+//Email Routes
+Route::get('mail/send', 'Mail\UserMailController@send');
+
 
 Route::group(['middleware' => ['auth:api']], function () {
 
@@ -32,11 +38,12 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::post('parametreUpdate','ParametreController@update');
     Route::post('parametreFetch','ParametreController@fetch');
 
+
     //Proprietaire Routes
-    Route::get('proprietaireFetch', 'proprietaireController@fetch');
-    Route::get('proprietaireSingle/{rowid}', 'proprietaireController@single');
-    Route::post('proprietaireInsert','proprietaireController@insert');
-    Route::put('proprietaireUpdate/{rowid}', 'proprietaireController@update');
-    Route::delete('proprietaireDelete/{rowid}', 'proprietaireController@delete');
-    Route::post('proprietaireDeleteMultiple', 'proprietaireController@deleteMultiple');
+    Route::get('proprietaire/fetch', 'Proprietaire\ProprietaireController@fetch');
+    Route::get('proprietaire/single/{rowid}', 'Proprietaire\ProprietaireController@single');
+    Route::post('proprietaire/insert','Proprietaire\ProprietaireController@insert');
+    Route::put('proprietaire/update/{rowid}', 'Proprietaire\ProprietaireController@update');
+    Route::delete('proprietaire/delete/{rowid}', 'Proprietaire\ProprietaireController@delete');
+    Route::post('proprietaire/deleteMultiple', 'Proprietaire\ProprietaireController@deleteMultiple');
 }) ;

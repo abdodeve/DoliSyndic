@@ -7,7 +7,8 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
-
+use App\Mail\Email;
+use Illuminate\Support\Facades\Mail;
 
 
 class userController extends Controller
@@ -66,7 +67,7 @@ class userController extends Controller
     $repeatPassword   = $request->repeatPassword ;
     $user = Auth::user();
 
-    if(!Hash::check($currentPassword, $user->password) || $user->password === $currentPassword)
+    if(!Hash::check($currentPassword, $user->password))
     return response()->json(array('Response'=>'incorrect_password','Msg' => 'password incorrecte')) ;
 
     if($newPassword !== $repeatPassword)
@@ -76,6 +77,25 @@ class userController extends Controller
     $user->save() ;
     return response()->json(array('Response'=>'password_changed','Msg' => 'Password changed')) ;
   }
+
+    // Forgot Password
+    public function forgotPassword(Request $request) {
+        $email = $request->email ;
+        $user = User::where('email', $email)->first();
+
+        if(!$user)
+            return response()->json(['Response'=> 'user_not_found']) ;
+
+        $new_random_password = str_random(5);
+        $user->password = bcrypt($new_random_password) ;
+        $user->save();
+        $objParam = new \stdClass();
+        $objParam->new_random_password = $new_random_password;
+
+        Mail::to($user->email)->send(new Email($objParam));
+        return response()->json(['Response'=> 'success' ]) ;
+    }
+
 
 /********************************* Functions not in Routes ***********************************************/
 

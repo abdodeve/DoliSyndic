@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Proprietaire;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\proprietaireModel;
 
-class proprietaireController extends Controller
+class ProprietaireController extends Controller
 {
     //Fetch
     public function fetch(Request $request){
