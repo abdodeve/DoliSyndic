@@ -11,7 +11,7 @@ use App\Mail\Email;
 use Illuminate\Support\Facades\Mail;
 
 
-class userController extends Controller
+class UserController extends Controller
 {
 
 /********************************* Functions in Routes ***********************************************/
@@ -40,10 +40,9 @@ class userController extends Controller
           }
     }
 
-  public function userDetails (Request $request){
+  public function userLoggedIn (Request $request){
     $user = Auth::user();
-
-    return response()->json(array('success'=>$user));
+    return response()->json(['user'=> $user]);
   }
   
   public function userLogout(Request $request)
@@ -56,7 +55,7 @@ class userController extends Controller
                   ->where('user_id', $user->id)
                   ->delete();
     
-        return response()->json(array('Success'=>'Log out success'));
+        return response()->json(array('success'=>'Log out success'));
     }
 
   // Change password
@@ -89,10 +88,10 @@ class userController extends Controller
         $new_random_password = str_random(5);
         $user->password = bcrypt($new_random_password) ;
         $user->save();
-        $objParam = new \stdClass();
-        $objParam->new_random_password = $new_random_password;
+        $emailData = new \stdClass();
+        $emailData->new_random_password = $new_random_password;
 
-        Mail::to($user->email)->send(new Email($objParam));
+        Mail::to($user->email)->send(new Email($emailData));
         return response()->json(['Response'=> 'success' ]) ;
     }
 

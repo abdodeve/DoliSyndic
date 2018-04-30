@@ -18,21 +18,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //User Routes
-Route::post('copyHashUsers','userController@copyHashUsers');
-Route::post('userLogin','userController@userLogin');
-Route::post('userDetails','userController@userDetails')->middleware('auth:api');
-Route::post('userLogout','userController@userLogout')->middleware('auth:api');
-Route::post('forgot/password','userController@forgotPassword');
-
-
-//Email Routes
-Route::get('mail/send', 'Mail\UserMailController@send');
+// Route::post('copyHashUsers','UserController@copyHashUsers');
+// Route::post('userLogin','UserController@userLogin');
+Route::post('user/logout','UserController@userLogout');
 
 
 Route::group(['middleware' => ['auth:api']], function () {
 
     //User Routes
-    Route::post('changePassword','userController@changePassword'); 
+    Route::get('user/loggedIn','UserController@userLoggedIn');
+    Route::post('changePassword','UserController@changePassword'); 
+    Route::post('forgot/password','UserController@forgotPassword');
 
     //Parametre Routes
     Route::post('parametreUpdate','ParametreController@update');

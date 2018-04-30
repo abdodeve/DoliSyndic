@@ -1,17 +1,10 @@
-Hello
-<p>This is a demo email for testing purposes! Also, it's the HTML version.</p>
+<h1>Bonjour,</h1>
+<h3>E-Syndic</h3>
+<p>Nouvelle mot passe est générer</p>
 
-<p><u>Demo object values:</u></p>
+<p><b>Votre nouvelle mot de passe: </b> {{ $emailData->new_random_password  }} </p>
 
-<div>
-    <p><b>Your new password: </b>&nbsp;{{ $demo->new_random_password }}</p>
-</div>
+<p><u>Veuillez le changer aprés votre accés</u></p>
 
-<p><u>Values passed by With method:</u></p>
-
-<div>
-    <p><b>testVarOne:</b>&nbsp;{{ $testVarOne }}</p>
-    <p><b>testVarTwo:</b>&nbsp;{{ $testVarTwo }}</p>
-</div>
-
-Thank You,
+<br/>
+Merci,
