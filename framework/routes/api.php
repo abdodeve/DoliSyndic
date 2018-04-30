@@ -21,6 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::post('copyHashUsers','UserController@copyHashUsers');
 // Route::post('userLogin','UserController@userLogin');
 Route::post('user/logout','UserController@userLogout');
+Route::post('forgot/password','UserController@forgotPassword');
 
 
 Route::group(['middleware' => ['auth:api']], function () {
@@ -28,7 +29,6 @@ Route::group(['middleware' => ['auth:api']], function () {
     //User Routes
     Route::get('user/loggedIn','UserController@userLoggedIn');
     Route::post('changePassword','UserController@changePassword'); 
-    Route::post('forgot/password','UserController@forgotPassword');
 
     //Parametre Routes
     Route::post('parametreUpdate','ParametreController@update');
