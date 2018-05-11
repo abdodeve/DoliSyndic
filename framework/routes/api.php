@@ -23,7 +23,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('user/logout','UserController@userLogout');
 Route::post('forgot/password','UserController@forgotPassword');
 
-
 Route::group(['middleware' => ['auth:api']], function () {
 
     //User Routes
@@ -34,12 +33,14 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::post('parametreUpdate','ParametreController@update');
     Route::post('parametreFetch','ParametreController@fetch');
 
-
     //Proprietaire Routes
     Route::get('proprietaire/fetch', 'Proprietaire\ProprietaireController@fetch');
-    Route::get('proprietaire/single/{rowid}', 'Proprietaire\ProprietaireController@single');
+    Route::get('proprietaire/single/{id}', 'Proprietaire\ProprietaireController@single');
     Route::post('proprietaire/insert','Proprietaire\ProprietaireController@insert');
-    Route::put('proprietaire/update/{rowid}', 'Proprietaire\ProprietaireController@update');
-    Route::delete('proprietaire/delete/{rowid}', 'Proprietaire\ProprietaireController@delete');
+    Route::put('proprietaire/update/{id}', 'Proprietaire\ProprietaireController@update');
+    Route::delete('proprietaire/delete/{id}', 'Proprietaire\ProprietaireController@delete');
     Route::post('proprietaire/deleteMultiple', 'Proprietaire\ProprietaireController@deleteMultiple');
+
+    //Copropriete Routes
+    Route::get('copropriete/coproprietesExercices','Copropriete\CoproprieteController@getCoproprietesExercices');
 }) ;

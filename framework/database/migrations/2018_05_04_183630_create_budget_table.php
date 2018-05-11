@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdevTestTable extends Migration
+class CreateBudgetTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateAdevTestTable extends Migration
      */
     public function up()
     {
-        Schema::create('adev_test', function (Blueprint $table) {
+        Schema::create('budget', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nom');
-            $table->integer('age');
+            $table->integer('fk_copropriete');
+            $table->string('libelle')->nullable();
+            $table->float('montant_actuel')->nullable();
+            $table->float('montant_anterieure')->nullable();
+            $table->float('montant_reste_anterieure')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateAdevTestTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('adev_test');
+        Schema::dropIfExists('budget');
     }
 }
