@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Events\EventGlobale ;
+use Pusher\Laravel\Facades\Pusher;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +19,22 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('fireEvent', function () {
+    $message = "test msg from backend" ;
+    $event = new EventGlobale($message) ;
+    $p = Pusher::trigger('adevChannel', 'EventGlobale', ['message' => $message]);
+    return event($event);
+    // return response()->json($p) ;
+});
+Route::get('sendEventMsg', function () {
+//    $event = new EventGlobale('Salam akhi') ;
+    $message = "Send Msg" ;
+    $event = new EventGlobale($message) ;
+    event($event);
+    return array('success'=>'finished');
+});
+
 
 //User Routes
 // Route::post('copyHashUsers','UserController@copyHashUsers');

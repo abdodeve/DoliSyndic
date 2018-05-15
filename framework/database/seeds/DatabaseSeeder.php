@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
        // factory(App\ProprietaireModel::class, 50)->create();
-       for ($i = 0; $i <= 20; $i++) {
+       for ($i = 0; $i <= 50; $i++) {
                 DB::table('proprietaire')->insert([
                     'nom' => str_random(10),
                     'prenom' => str_random(10),

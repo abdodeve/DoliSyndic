@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Proprietaire;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ProprietaireModel;
+use App\Events\EventGlobale ;
 
 class ProprietaireController extends Controller
 {
@@ -33,6 +34,7 @@ class ProprietaireController extends Controller
         $proprietaire->nom       = $request->nom ;
         $proprietaire->prenom    = $request->prenom ;
         $proprietaire->save();
+        event(new EventGlobale(response()->json(['proprietaire' => ['insert' => $proprietaire]])));
       	return response()->json($proprietaire);
     }
 
@@ -42,18 +44,21 @@ class ProprietaireController extends Controller
         $proprietaire->nom       = $request->nom ;
         $proprietaire->prenom    = $request->prenom ;
         $proprietaire->save();
+        event(new EventGlobale(response()->json(['proprietaire' => ['update' => $proprietaire]])));
       	return response()->json($proprietaire);
     }
     
     //Delete
     public function delete(Request $request, $id){
         $isDeleted = ProprietaireModel::destroy($id) ;
+        event(new EventGlobale(response()->json(['proprietaire' => ['deleted_id' => $id]])));
       	return response()->json($isDeleted);
     }
     
      //Delete Multiple
      public function deleteMultiple(Request $request){
         $isDeleted = ProprietaireModel::destroy($request->ids) ;
+        event(new EventGlobale(response()->json(['proprietaire' => ['deleted_ids' => $request->ids]])));
         return response()->json($isDeleted);
     }
       

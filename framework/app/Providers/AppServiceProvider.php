@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Providers;
+use App\Models\ProprietaireModel;
+use App\Observers\ProprietaireObserver;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        ProprietaireModel::observe(ProprietaireObserver::class);
     }
 
     /**
